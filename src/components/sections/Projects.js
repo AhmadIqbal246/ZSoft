@@ -18,15 +18,12 @@ export default function Projects() {
     return (
         <section id="projects" className="py-10 lg:py-32 bg-transparent">
             <div className="container mx-auto px-6 lg:px-12">
-                <div className="flex flex-col gap-6 mb-20">
+                <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-accent font-mono text-sm tracking-widest uppercase">// OUR WORK</span>
                     </FadeIn>
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
-                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
-                            Case Studies & <br /> <span className="text-accent">Recent</span> Projects.
-                        </h2>
-                    </div>
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+                        Case Studies & <br /> <span className="text-accent">Recent</span> Projects.
+                    </h2>
                 </div>
 
                 {/* Projects Grid */}

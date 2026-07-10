@@ -177,7 +177,7 @@ export default function ServicesPage() {
             <Navbar />
 
             {/* HERO SECTION */}
-            <section className="relative pt-40 pb-20 overflow-hidden">
+            <section className="relative pt-8 pb-20 overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <FadeIn direction="down" delay={0.2}>
                         <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">EXPERTISE</span>
@@ -323,8 +323,8 @@ export default function ServicesPage() {
                                         <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </MagneticButton>
-                                <a href="mailto:hello@zsofthub.com" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
-                                    hello@zsofthub.com
+                                <a href="mailto:ahmad@protonixshub.com" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
+                                    ahmad@protonixshub.com
                                 </a>
                             </div>
                         </div>

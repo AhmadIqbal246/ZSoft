@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import FAQ from "@/components/sections/FAQ";
@@ -13,11 +12,11 @@ import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
     <main className="bg-transparent">
-      <Navbar />
       <div className="flex flex-col gap-0">
         <Hero />
         <WhyChooseUs />
         <Projects />
+        <FAQ/>
         <Testimonials />
         <Contact />
       </div>

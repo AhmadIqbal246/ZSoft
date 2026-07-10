@@ -4,8 +4,8 @@ import ClientLayout from '@/components/layout/ClientLayout';
 import Script from 'next/script'
 
 export const metadata = {
-  title: 'Z Soft | AI & Web Solutions That Transform Businesses',
-  description: 'Z Soft is a leading IT services company specializing in web development, AI solutions, and custom software. We build powerful applications that drive business growth.',
+  title: 'Protonixs | AI & Web Solutions That Transform Businesses',
+  description: 'Protonixs is a leading IT services company specializing in web development, AI solutions, and custom software. We build powerful applications that drive business growth.',
 };
 
 export default function RootLayout({ children }) {

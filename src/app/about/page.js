@@ -55,7 +55,7 @@ const journey = [
     {
         year: "2024",
         title: "Company Founded",
-        description: "Z Soft was established with a vision to transform businesses through innovative technology solutions.",
+        description: "Protonixs was established with a vision to transform businesses through innovative technology solutions.",
     },
     {
         year: "2024",
@@ -166,7 +166,7 @@ export default function AboutPage() {
             <Navbar />
 
             {/* HER0 SECTION */}
-            <section className="relative pt-40 pb-20 overflow-hidden">
+            <section className="relative pt-8 pb-20 overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <FadeIn direction="down" delay={0.2}>
                         <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">OUR STORY</span>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                         <span className="gradient-text-animated">Future of Technology</span>.
                     </h1>
                     <p className="text-muted text-xl max-w-3xl mx-auto leading-relaxed mb-12">
-                        Z Soft is a leading IT services company dedicated to transforming businesses through innovative web development, AI solutions, and custom software. We believe technology should empower growth and drive success.
+                        Protonixs is a leading IT services company dedicated to transforming businesses through innovative web development, AI solutions, and custom software. We believe technology should empower growth and drive success.
                     </p>
 
                     {/* Stats Grid */}
@@ -444,8 +444,8 @@ export default function AboutPage() {
                                         <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </MagneticButton>
-                                <a href="mailto:hello@zsofthub.com" className="text-white/70 hover:text-accent transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
-                                    hello@zsofthub.com
+                                <a href="mailto:ahmad@protonixshub.com" className="text-white/70 hover:text-accent transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
+                                    ahmad@protonixshub.com
                                 </a>
                             </div>
                         </div>

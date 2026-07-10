@@ -9,7 +9,7 @@ const testimonials = [
     {
         name: "Cedric",
         role: "Safe-Bill | France",
-        quote: "Z Soft delivered a flawless fintech platform. Their milestone system and AI integration have completely secured our transactions. Exceptional work!",
+        quote: "Protonixs delivered a flawless fintech platform. Their milestone system and AI integration have completely secured our transactions. Exceptional work!",
     },
     {
         name: "Ben",
@@ -19,7 +19,7 @@ const testimonials = [
     {
         name: "Ali Raza",
         role: "Arabic AI Law | Saudi Arabia",
-        quote: "The complex RAG pipeline and Arabic voice processing work perfectly. Z Soft has successfully modernized legal research in the KSA domain. Truly impressive.",
+        quote: "The complex RAG pipeline and Arabic voice processing work perfectly. Protonixs has successfully modernized legal research in the KSA domain. Truly impressive.",
     },
 ];
 
@@ -34,7 +34,6 @@ export default function Testimonials() {
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="flex flex-col gap-6 mb-24 items-center justify-center text-center">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-accent font-mono text-sm tracking-widest uppercase">// TESTIMONIALS</span>
                     </FadeIn>
                     <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
                         What our <span className="text-accent">clients</span> say.

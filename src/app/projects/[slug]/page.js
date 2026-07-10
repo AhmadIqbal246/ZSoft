@@ -47,7 +47,7 @@ export default function ProjectDetailPage() {
             <Navbar />
 
             {/* HERO SECTION */}
-            <section className="relative pt-40 pb-20 overflow-hidden">
+            <section className="relative pt-8 pb-20 overflow-hidden">
                 {/* Background Glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full glow-radial-top pointer-events-none" />
 
@@ -210,8 +210,8 @@ export default function ProjectDetailPage() {
                                         <ArrowLeft size={20} className="rotate-180 group-hover:translate-x-2 transition-transform" />
                                     </button>
                                 </MagneticButton>
-                                <a href="mailto:hello@zsofthub.com" className="text-white/70 hover:text-accent transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
-                                    hello@zsofthub.com
+                                <a href="mailto:ahmad@protonixshub.com" className="text-white/70 hover:text-accent transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
+                                    ahmad@protonixshub.com
                                 </a>
                             </div>
                         </div>

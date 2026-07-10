@@ -54,7 +54,7 @@ export default function Navbar() {
                         </video>
                     </div>
                     <span className="font-serif text-xl font-bold tracking-tighter text-foreground uppercase">
-                        Z Soft
+                        Protonixs
                     </span>
                 </div>
                 <button
@@ -92,7 +92,7 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className="fixed top-0 inset-x-0 w-full z-[1000] outline-none py-4 bg-transparent"
+                className="relative w-full z-10 outline-none py-4 bg-transparent"
             >
                 <div className="relative flex items-center justify-between w-full max-w-[100vw] px-6 lg:px-16 mx-auto outline-none">
                     <Link href="/" className="relative z-10">
@@ -109,7 +109,7 @@ export default function Navbar() {
                                 </video>
                             </div>
                             <span className="font-serif text-2xl font-bold tracking-tighter text-foreground uppercase">
-                                Z Soft
+                                Protonixs
                             </span>
                         </div>
                     </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
                             <div key={link.name} className="group relative">
                                 <Link
                                     href={link.href}
-                                    className="text-foreground hover:text-accent text-sm lg:text-base uppercase tracking-[0.12em] font-medium cursor-pointer [font-family:var(--font-space)]"
+                                    className="text-foreground hover:text-accent text-sm lg:text-base uppercase tracking-[0.12em] font-normal cursor-pointer [font-family:var(--font-space)]"
                                 >
                                     {link.name}
                                 </Link>

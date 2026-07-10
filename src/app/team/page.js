@@ -181,14 +181,14 @@ export default function TeamPage() {
             <Navbar />
 
             {/* HERO SECTION */}
-            <section className="relative pt-40 pb-20 overflow-hidden">
+            <section className="relative pt-8 pb-20 overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <FadeIn direction="down" delay={0.2}>
                         <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">OUR PEOPLE</span>
                     </FadeIn>
                     <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight">
                         The Minds Behind <br />
-                        <span className="gradient-text-animated">Z Soft</span>
+                        <span className="gradient-text-animated">Protonixs</span>
                     </h1>
                     <p className="text-muted text-xl max-w-3xl mx-auto leading-relaxed mb-12">
                         Meet our exceptional team of engineers, designers, and visionaries dedicated to building the next generation of digital excellence.
@@ -295,12 +295,12 @@ export default function TeamPage() {
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <MagneticButton>
-                                    <a href="mailto:careers@Z Soft.dev" className="group flex items-center gap-4 py-6 px-12 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300">
+                                    <a href="mailto:careers@Protonixs.dev" className="group flex items-center gap-4 py-6 px-12 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300">
                                         Check Open Positions
                                         <ExternalLink size={24} className="group-hover:rotate-12 transition-transform" />
                                     </a>
                                 </MagneticButton>
-                                <a href="https://www.linkedin.com/company/Z Soft" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
+                                <a href="https://www.linkedin.com/company/Protonixs" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
                                     Follow us on LinkedIn
                                 </a>
                             </div>

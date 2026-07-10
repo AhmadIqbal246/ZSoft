@@ -25,9 +25,9 @@ const contactDetails = [
     {
         icon: <Mail className="text-accent" size={24} />,
         label: "Email Us",
-        value: "hello@zsofthub.com",
+        value: "ahmad@protonixshub.com",
         description: "Our team typically responds within 2 hours.",
-        href: "mailto:hello@zsofthub.com"
+        href: "mailto:ahmad@protonixshub.com"
     },
     {
         icon: <Phone className="text-accent" size={24} />,
@@ -83,16 +83,12 @@ export default function ContactPage() {
 
     return (
         <main className="bg-transparent scroll-smooth min-h-screen">
-            <Navbar />
-
-            {/* HERO SECTION */}
-            <section className="relative pt-40 pb-20 overflow-hidden">
+            <section className="relative pb-20 overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full glow-radial-top pointer-events-none" />
-
-                <div className="container mx-auto px-6 lg:px-12">
+                <Navbar />
+                <div className="container mx-auto px-6 lg:px-12 pt-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <FadeIn direction="down">
-                            <span className="text-accent font-mono text-sm tracking-[0.3em] uppercase mb-6 block">GET IN TOUCH</span>
                             <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight">
                                 Let&apos;s Build the <br />
                                 <span className="gradient-text-animated">Next Big Thing</span>.

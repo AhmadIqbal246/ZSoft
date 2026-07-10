@@ -9,7 +9,7 @@ export default function AIAssistantBot() {
     const [isMinimized, setIsMinimized] = useState(false);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([
-        { role: "assistant", content: "Hi! I'm the Z Soft AI. How can I help you today? I can tell you about our projects or our services." }
+        { role: "assistant", content: "Hi! I'm the Protonixs AI. How can I help you today? I can tell you about our projects or our services." }
     ]);
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef(null);
@@ -77,26 +77,25 @@ export default function AIAssistantBot() {
                     style={{ height: isMinimized ? "60px" : "580px" }}
                     className={`transition-all duration-300 ease-in-out w-[290px] min-[350px]:w-[320px] md:w-[380px] bg-canvas/95 border border-white/10 rounded-[1.5rem] shadow-2xl flex flex-col mb-4 overflow-hidden`}
                 >
-                    {/* Header */}
-                    <div className="p-4 border-b border-white/5 bg-gradient-accent flex items-center justify-between">
+                    <div className="p-4 border-b border-white/10 bg-surface flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-                                <Bot size={20} className="text-white" />
+                            <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
+                                <Bot size={20} className="text-accent" />
                             </div>
                             <div>
-                                <h3 className="text-white font-bold text-xs">Z Soft AI</h3>
+                                <h3 className="text-foreground font-bold text-xs">Protonixs AI</h3>
                                 <div className="flex items-center gap-1.5">
                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                                    <span className="text-[9px] text-white/70 uppercase tracking-widest font-mono font-medium">Online</span>
+                                    <span className="text-[9px] text-muted uppercase tracking-widest font-mono font-medium">Online</span>
                                 </div>
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
-                            <button onClick={() => setIsMinimized(!isMinimized)} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">
-                                {isMinimized ? <Maximize2 size={16} className="text-white" /> : <Minus size={16} className="text-white" />}
+                            <button onClick={() => setIsMinimized(!isMinimized)} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors cursor-pointer">
+                                {isMinimized ? <Maximize2 size={16} className="text-muted" /> : <Minus size={16} className="text-muted" />}
                             </button>
-                            <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">
-                                <X size={16} className="text-white" />
+                            <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors cursor-pointer">
+                                <X size={16} className="text-muted" />
                             </button>
                         </div>
                     </div>

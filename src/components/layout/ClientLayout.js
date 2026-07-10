@@ -9,6 +9,7 @@ import { theme } from "@/lib/theme";
 
 import Particles from "@/components/three/Particles";
 const DynamicParticles = dynamic(() => Promise.resolve(Particles), { ssr: false });
+const DynamicLightPillar = dynamic(() => import("@/components/three/LightPillar"), { ssr: false });
 
 export default function ClientLayout({ children }) {
     const [mounted, setMounted] = useState(false);
@@ -16,16 +17,29 @@ export default function ClientLayout({ children }) {
 
     return (
         <>
-            {/* GLOBAL BACKGROUND LAYER */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-canvas">
-                {/* CSS Gradient Mesh */}
                 <div className="absolute inset-0">
                     <div className="gradient-mesh-blob gradient-mesh-blob--foreground opacity-20" />
                     <div className="gradient-mesh-blob gradient-mesh-blob--accent opacity-20" />
                     <div className="gradient-mesh-blob gradient-mesh-blob--deep" />
                 </div>
-
-                {/* Particles */}
+                {mounted && (
+                    <div className="absolute inset-0 w-full h-full">
+                        <DynamicLightPillar
+                            topColor={theme.colors.foreground}
+                            bottomColor={theme.colors.foreground}
+                            intensity={0.35}
+                            rotationSpeed={1}
+                            pillarRotation={35}
+                            glowAmount={0.003}
+                            pillarWidth={2.8}
+                            pillarHeight={0.45}
+                            noiseIntensity={0.25}
+                            mixBlendMode="screen"
+                            quality="medium"
+                        />
+                    </div>
+                )}
                 {mounted && (
                     <div className="absolute inset-0 w-full h-full opacity-60">
                         <DynamicParticles
@@ -43,7 +57,6 @@ export default function ClientLayout({ children }) {
                 )}
             </div>
 
-            {/* CONTENT LAYER */}
             <div className="relative z-10 overflow-x-hidden w-full">
                 <ScrollProgressBar visible={true} />
                 <NoiseOverlay />
