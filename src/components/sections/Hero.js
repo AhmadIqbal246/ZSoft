@@ -6,6 +6,10 @@ import dynamic from "next/dynamic";
 import { theme } from "@/lib/theme";
 
 import AIChatbot from "@/components/three/AIChatbot";
+import BlurText from "@/components/animations/BlurText";
+
+const headlineClass =
+    "text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] tracking-tight justify-center";
 
 const DynamicChatbot = dynamic(() => Promise.resolve(AIChatbot), { ssr: false });
 const DynamicLightPillar = dynamic(() => import("@/components/three/LightPillar"), { ssr: false });
@@ -52,18 +56,31 @@ export default function Hero() {
             <motion.div
                 className="container mx-auto px-6 lg:px-12 flex flex-col items-center relative z-10 pt-8 lg:pt-16 w-full"
             >
-                <motion.div
-                    initial={{ opacity: 0, y: -30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                    className="flex flex-col gap-4 items-center text-center w-full"
-                >
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] mb-2 tracking-tight">
-                        <span className="block">
-                            <span className="text-accent">Transform Your</span>{" "}
-                            <span className="text-foreground">Business with AI</span>
-                        </span>
-                        <span className="gradient-text-animated block">&amp; Web Solutions.</span>
+                <div className="flex flex-col gap-4 items-center text-center w-full">
+                    <h1 className="w-full mb-2">
+                        <div className={`flex flex-wrap justify-center items-baseline gap-x-2 ${headlineClass}`}>
+                            <BlurText
+                                text="Transform Your"
+                                className={`text-accent ${headlineClass}`}
+                                delay={120}
+                                direction="top"
+                                threshold={0}
+                            />
+                            <BlurText
+                                text="Business with AI"
+                                className={`text-foreground ${headlineClass}`}
+                                delay={120}
+                                direction="top"
+                                threshold={0}
+                            />
+                        </div>
+                        <BlurText
+                            text="& Web Solutions."
+                            className={`text-foreground ${headlineClass}`}
+                            delay={120}
+                            direction="top"
+                            threshold={0}
+                        />
                     </h1>
                     <div className="h-10 md:h-12 overflow-hidden mt-2">
                         <motion.p
@@ -77,7 +94,7 @@ export default function Hero() {
                             {role}
                         </motion.p>
                     </div>
-                </motion.div>
+                </div>
 
                 <div className="w-full max-w-3xl flex justify-center">
                     {mounted && <DynamicChatbot isAbsolute={false} />}

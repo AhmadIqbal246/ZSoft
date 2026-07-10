@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { createPortal } from "react-dom";
-import Image from "next/image";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,11 +92,10 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className="fixed top-0 inset-x-0 w-full z-[1000] outline-none py-4 glass shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+                className="fixed top-0 inset-x-0 w-full z-[1000] outline-none py-4 bg-transparent"
             >
-                <div className="flex items-center justify-between w-full max-w-[100vw] px-6 lg:px-16 mx-auto outline-none">
-                    {/* LOGO */}
-                    <Link href="/">
+                <div className="relative flex items-center justify-between w-full max-w-[100vw] px-6 lg:px-16 mx-auto outline-none">
+                    <Link href="/" className="relative z-10">
                         <div className="flex items-center gap-1 group cursor-pointer">
                             <div className="relative w-12 h-12 flex items-center justify-center overflow-hidden rounded-xl bg-transparent transition-transform duration-300 group-hover:scale-105">
                                 <video
@@ -116,35 +114,31 @@ export default function Navbar() {
                         </div>
                     </Link>
 
-                    {/* DESKTOP LINKS */}
-                    <div className="hidden lg:flex items-center gap-10">
-                        <div className="flex items-center gap-8 bg-white/5 px-8 py-3 rounded-full border border-white/5 backdrop-blur-md">
-                            {navLinks.map((link) => (
-                                <div key={link.name} className="group relative">
-                                    <Link
-                                        href={link.href}
-                                        className="text-muted hover:text-foreground text-[11px] font-mono uppercase tracking-[0.2em] font-medium"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                    <div className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-accent group-hover:w-full rounded-full" />
-                                </div>
-                            ))}
-                        </div>
+                    <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+                        {navLinks.map((link) => (
+                            <div key={link.name} className="group relative">
+                                <Link
+                                    href={link.href}
+                                    className="text-foreground hover:text-accent text-sm lg:text-base uppercase tracking-[0.12em] font-medium cursor-pointer [font-family:var(--font-space)]"
+                                >
+                                    {link.name}
+                                </Link>
+                                <div className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-accent group-hover:w-full rounded-full" />
+                            </div>
+                        ))}
+                    </div>
 
-                        <Link href="/contact">
-                            <button className="relative py-3.5 px-10 rounded-full bg-gradient-btn text-[11px] font-bold uppercase tracking-[0.15em] text-btn-primary-foreground shadow-glow hover:shadow-glow-accent group overflow-hidden">
+                    <div className="relative z-10 flex items-center gap-4 ml-auto">
+                        <Link href="/contact" className="hidden lg:block">
+                            <button className="relative py-3.5 px-10 rounded-full bg-gradient-btn text-[11px] font-bold uppercase tracking-[0.15em] text-btn-primary-foreground shadow-glow hover:shadow-glow-accent group overflow-hidden cursor-pointer">
                                 <span className="relative z-10">Contact Us</span>
                                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100" />
                             </button>
                         </Link>
-                    </div>
 
-                    {/* MOBILE TOGGLE */}
-                    <div className="lg:hidden flex items-center">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-foreground active:bg-white/10"
+                            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-foreground active:bg-white/10 cursor-pointer"
                             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         >
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

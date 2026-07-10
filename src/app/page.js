@@ -17,7 +17,6 @@ export default function Home() {
       <div className="flex flex-col gap-0">
         <Hero />
         <WhyChooseUs />
-        <FAQ />
         <Projects />
         <Testimonials />
         <Contact />
