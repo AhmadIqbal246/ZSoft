@@ -38,7 +38,7 @@ const services = [
             "Cross-browser Compatibility"
         ],
         technologies: ["React", "Next.js", "Node.js", "TypeScript", "Tailwind CSS"],
-        gradient: "from-violet/20 to-violet/5"
+        gradient: "from-foreground/20 to-foreground/5"
     },
     {
         id: "ai-solutions",
@@ -53,7 +53,7 @@ const services = [
             "AI Integration"
         ],
         technologies: ["Python", "TensorFlow", "PyTorch", "OpenAI", "AWS AI"],
-        gradient: "from-cyan/20 to-cyan/5"
+        gradient: "from-accent/20 to-accent/5"
     },
     {
         id: "mobile-development",
@@ -68,7 +68,7 @@ const services = [
             "Offline Capabilities"
         ],
         technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
-        gradient: "from-violet/20 to-violet/5"
+        gradient: "from-foreground/20 to-foreground/5"
     },
     {
         id: "ecommerce",
@@ -83,7 +83,7 @@ const services = [
             "Analytics & Reporting"
         ],
         technologies: ["Shopify", "WooCommerce", "Magento", "Stripe", "PayPal"],
-        gradient: "from-cyan/20 to-cyan/5"
+        gradient: "from-accent/20 to-accent/5"
     },
     {
         id: "cloud-solutions",
@@ -98,7 +98,7 @@ const services = [
             "Auto-scaling"
         ],
         technologies: ["AWS", "Azure", "Docker", "Kubernetes", "Terraform"],
-        gradient: "from-violet/20 to-violet/5"
+        gradient: "from-foreground/20 to-foreground/5"
     },
     {
         id: "consulting",
@@ -113,7 +113,7 @@ const services = [
             "Team Training"
         ],
         technologies: ["Architecture", "Best Practices", "Code Review", "Mentoring", "Strategy"],
-        gradient: "from-cyan/20 to-cyan/5"
+        gradient: "from-accent/20 to-accent/5"
     }
 ];
 
@@ -122,25 +122,25 @@ const serviceStats = [
         icon: <Users size={24} />,
         number: "15+",
         label: "Team Members",
-        color: "text-violet"
+        color: "text-accent"
     },
     {
         icon: <Award size={24} />,
         number: "50+",
         label: "Years Combined Experience",
-        color: "text-cyan"
+        color: "text-accent"
     },
     {
         icon: <Code size={24} />,
         number: "100+",
         label: "Projects Completed",
-        color: "text-violet"
+        color: "text-accent"
     },
     {
         icon: <Zap size={24} />,
         number: "24/7",
         label: "Support Available",
-        color: "text-cyan"
+        color: "text-accent"
     }
 ];
 
@@ -180,7 +180,7 @@ export default function ServicesPage() {
             <section className="relative pt-40 pb-20 overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <FadeIn direction="down" delay={0.2}>
-                        <span className="text-cyan font-mono text-sm tracking-widest uppercase mb-6 block">EXPERTISE</span>
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">EXPERTISE</span>
                     </FadeIn>
                     <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight">
                         Our <span className="gradient-text-animated">Services</span>
@@ -208,10 +208,10 @@ export default function ServicesPage() {
                                 <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${service.gradient} blur-[80px] group-hover:scale-150 transition-transform duration-700`} />
 
                                 <div className="relative z-10 flex flex-col h-full">
-                                    <div className="mb-8 p-6 w-fit rounded-2xl bg-white/5 text-cyan group-hover:scale-110 transition-transform duration-500">
+                                    <div className="mb-8 p-6 w-fit rounded-2xl bg-white/5 text-accent group-hover:scale-110 transition-transform duration-500">
                                         {service.icon}
                                     </div>
-                                    <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:text-cyan transition-colors">{service.title}</h3>
+                                    <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
                                     <p className="text-muted text-sm leading-relaxed mb-8 flex-grow">
                                         {service.description}
                                     </p>
@@ -221,7 +221,7 @@ export default function ServicesPage() {
                                         <ul className="flex flex-col gap-2">
                                             {service.features.map((feature, j) => (
                                                 <li key={j} className="flex items-center gap-3 text-sm text-muted">
-                                                    <CheckCircle2 size={14} className="text-cyan" />
+                                                    <CheckCircle2 size={14} className="text-accent" />
                                                     {feature}
                                                 </li>
                                             ))}
@@ -266,7 +266,7 @@ export default function ServicesPage() {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex flex-col items-center text-center relative z-10"
                             >
-                                <div className="mb-10 w-24 h-24 rounded-full bg-surface border border-white/10 flex items-center justify-center text-cyan shadow-glow group hover:scale-110 transition-transform duration-500 relative bg-black">
+                                <div className="mb-10 w-24 h-24 rounded-full bg-surface border border-white/10 flex items-center justify-center text-accent shadow-glow group hover:scale-110 transition-transform duration-500 relative bg-black">
                                     <div className="absolute -bottom-11 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-accent flex items-center justify-center text-white font-bold font-mono text-xs shadow-glow-sm z-20">
                                         {item.step}
                                     </div>
@@ -308,22 +308,22 @@ export default function ServicesPage() {
             <section className="py-32 relative">
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="p-16 lg:p-24 rounded-[3.5rem] bg-gradient-to-br from-[#0a0a0a] to-[#151515] border border-white/5 relative overflow-hidden text-center">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet/5 to-cyan/5 pointer-events-none" />
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-foreground/5 to-accent/5 pointer-events-none" />
                         <div className="relative z-10">
                             <h2 className="text-4xl md:text-7xl font-serif font-bold text-white mb-8">
-                                Have a project in <span className="text-cyan">mind</span>?
+                                Have a project in <span className="text-accent">mind</span>?
                             </h2>
                             <p className="text-muted text-xl max-w-2xl mx-auto mb-12">
                                 Let&apos;s collaborate to build something extraordinary. Our team of experts is ready to help you navigate the future of technology.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <MagneticButton>
-                                    <Link href="/contact" className="group flex items-center gap-4 py-6 px-12 bg-gradient-accent text-white font-bold rounded-2xl shadow-glow transition-all duration-300">
+                                    <Link href="/contact" className="group flex items-center gap-4 py-6 px-12 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300">
                                         Get a Free Quote
                                         <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </MagneticButton>
-                                <a href="mailto:hello@zsofthub.com" className="text-white hover:text-cyan transition-colors font-mono tracking-widest uppercase text-sm">
+                                <a href="mailto:hello@zsofthub.com" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
                                     hello@zsofthub.com
                                 </a>
                             </div>

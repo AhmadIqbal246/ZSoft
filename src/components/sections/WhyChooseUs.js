@@ -11,44 +11,44 @@ const features = [
         title: "AI Chatbots & RAG Systems",
         description:
             "Intelligent conversational AI and Retrieval-Augmented Generation systems that enhance customer engagement and automate complex business processes.",
-        color: "cyan",
-        gradient: "from-cyan/20 to-transparent",
-        borderHover: "hover:border-cyan/30",
-        iconBg: "bg-cyan/10",
-        iconColor: "text-cyan",
+        color: "accent",
+        gradient: "from-accent/20 to-transparent",
+        borderHover: "hover:border-accent/30",
+        iconBg: "bg-accent/10",
+        iconColor: "text-accent",
     },
     {
         icon: <Globe size={32} />,
         title: "Web Development Excellence",
         description:
             "Custom web applications built with Python and JavaScript. From responsive frontends to robust backends, we create scalable solutions that drive business growth.",
-        color: "violet",
-        gradient: "from-violet/20 to-transparent",
-        borderHover: "hover:border-violet/30",
-        iconBg: "bg-violet/10",
-        iconColor: "text-violet",
+        color: "foreground",
+        gradient: "from-foreground/20 to-transparent",
+        borderHover: "hover:border-foreground/30",
+        iconBg: "bg-foreground/10",
+        iconColor: "text-accent",
     },
     {
         icon: <ShieldCheck size={32} />,
         title: "Enterprise Security & Compliance",
         description:
             "Bank-grade security with end-to-end encryption, role-based access control, and full compliance with industry standards and regulations.",
-        color: "cyan",
-        gradient: "from-cyan/20 to-transparent",
-        borderHover: "hover:border-cyan/30",
-        iconBg: "bg-cyan/10",
-        iconColor: "text-cyan",
+        color: "accent",
+        gradient: "from-accent/20 to-transparent",
+        borderHover: "hover:border-accent/30",
+        iconBg: "bg-accent/10",
+        iconColor: "text-accent",
     },
     {
         icon: <Headphones size={32} />,
         title: "24/7 Support & Maintenance",
         description:
             "Round-the-clock technical support, regular maintenance, and continuous monitoring to ensure your systems run smoothly and efficiently.",
-        color: "violet",
-        gradient: "from-violet/20 to-transparent",
-        borderHover: "hover:border-violet/30",
-        iconBg: "bg-violet/10",
-        iconColor: "text-violet",
+        color: "foreground",
+        gradient: "from-foreground/20 to-transparent",
+        borderHover: "hover:border-foreground/30",
+        iconBg: "bg-foreground/10",
+        iconColor: "text-accent",
     },
 ];
 
@@ -69,18 +69,18 @@ export default function WhyChooseUs() {
     return (
         <section id="why-us" className="py-10 lg:py-32 bg-transparent overflow-hidden relative">
             {/* Decorative background glow */}
-            <div className="absolute top-[30%] left-[-15%] w-[500px] h-[500px] bg-violet/5 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] bg-cyan/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-[30%] left-[-15%] w-[500px] h-[500px] bg-foreground/5 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-6 lg:px-12">
                 {/* Section Header */}
                 <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase">
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase">
                             WHY CHOOSE US
                         </span>
                     </FadeIn>
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-text-primary">
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
                         Why Businesses Trust{" "}
                         <span className="gradient-text-animated">Z Soft</span>.
                     </h2>
@@ -116,12 +116,12 @@ export default function WhyChooseUs() {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-xl md:text-2xl font-serif font-bold text-text-primary group-hover:text-white transition-colors duration-300">
+                                <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground group-hover:text-white transition-colors duration-300">
                                     {feature.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-sm md:text-base leading-relaxed" style={{ color: '#b0b0b0' }}>
+                                <p className="text-foreground text-sm md:text-base leading-relaxed">
                                     {feature.description}
                                 </p>
 

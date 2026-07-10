@@ -38,24 +38,10 @@ export default function Navbar() {
 
     const mobileMenu = isMenuOpen && portalTarget ? createPortal(
         <div
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                width: '100vw',
-                height: '100vh',
-                backgroundColor: '#080808',
-                zIndex: 99999,
-                display: 'flex',
-                flexDirection: 'column',
-            }}
+            className="fixed inset-0 z-[99999] flex flex-col bg-canvas"
         >
             {/* Menu Header */}
-            <div className="flex justify-between items-center w-full px-6 py-4 border-b border-white/5"
-                style={{ backgroundColor: '#080808' }}
-            >
+            <div className="flex justify-between items-center w-full px-6 py-4 border-b border-white/5 bg-canvas">
                 <div className="flex items-center gap-1">
                     <div className="relative w-12 h-12 flex items-center justify-center overflow-hidden rounded-xl bg-transparent">
                         <video
@@ -68,7 +54,7 @@ export default function Navbar() {
                             <source src="/Animated Logo/RobotSaludando.webm" type="video/webm" />
                         </video>
                     </div>
-                    <span className="font-serif text-xl font-bold tracking-tighter text-text-primary uppercase">
+                    <span className="font-serif text-xl font-bold tracking-tighter text-foreground uppercase">
                         Z Soft
                     </span>
                 </div>
@@ -83,8 +69,7 @@ export default function Navbar() {
 
             {/* Links - Beautifully centered */}
             <div
-                className="flex-1 flex flex-col justify-center items-center gap-5 px-6 overflow-y-auto"
-                style={{ backgroundColor: '#080808' }}
+                className="flex-1 flex flex-col justify-center items-center gap-5 px-6 overflow-y-auto bg-canvas"
             >
                 {navLinks.map((link) => (
                     <Link
@@ -93,7 +78,7 @@ export default function Navbar() {
                         onClick={() => setIsMenuOpen(false)}
                         className="w-full text-center"
                     >
-                        <span className="text-2xl sm:text-3xl font-serif font-bold text-text-primary hover:text-cyan uppercase tracking-tight block py-2">
+                        <span className="text-2xl sm:text-3xl font-serif font-bold text-foreground hover:text-accent uppercase tracking-tight block py-2">
                             {link.name}
                         </span>
                     </Link>
@@ -125,7 +110,7 @@ export default function Navbar() {
                                     <source src="/Animated Logo/RobotSaludando.webm" type="video/webm" />
                                 </video>
                             </div>
-                            <span className="font-serif text-2xl font-bold tracking-tighter text-text-primary uppercase">
+                            <span className="font-serif text-2xl font-bold tracking-tighter text-foreground uppercase">
                                 Z Soft
                             </span>
                         </div>
@@ -138,7 +123,7 @@ export default function Navbar() {
                                 <div key={link.name} className="group relative">
                                     <Link
                                         href={link.href}
-                                        className="text-muted hover:text-text-primary text-[11px] font-mono uppercase tracking-[0.2em] font-medium"
+                                        className="text-muted hover:text-foreground text-[11px] font-mono uppercase tracking-[0.2em] font-medium"
                                     >
                                         {link.name}
                                     </Link>
@@ -148,8 +133,8 @@ export default function Navbar() {
                         </div>
 
                         <Link href="/contact">
-                            <button className="relative py-3.5 px-10 rounded-full bg-gradient-accent text-[11px] font-bold uppercase tracking-[0.15em] shadow-glow hover:shadow-[0_0_40px_rgba(108,99,255,0.4)] group overflow-hidden">
-                                <span className="relative z-10 text-white">Contact Us</span>
+                            <button className="relative py-3.5 px-10 rounded-full bg-gradient-btn text-[11px] font-bold uppercase tracking-[0.15em] text-btn-primary-foreground shadow-glow hover:shadow-glow-accent group overflow-hidden">
+                                <span className="relative z-10">Contact Us</span>
                                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100" />
                             </button>
                         </Link>
@@ -159,7 +144,7 @@ export default function Navbar() {
                     <div className="lg:hidden flex items-center">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-text-primary active:bg-white/10"
+                            className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-foreground active:bg-white/10"
                             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         >
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

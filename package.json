@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "theme:sync": "node scripts/sync-theme-css.js",
+    "predev": "node scripts/sync-theme-css.js",
+    "prebuild": "node scripts/sync-theme-css.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

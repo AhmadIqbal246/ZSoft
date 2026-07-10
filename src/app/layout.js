@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-base text-text-primary selection:bg-violet selection:text-white overflow-x-hidden">
+      <body className="bg-canvas text-foreground selection:bg-accent selection:text-foreground overflow-x-hidden">
         <ClientLayout>
           {children}
         </ClientLayout>

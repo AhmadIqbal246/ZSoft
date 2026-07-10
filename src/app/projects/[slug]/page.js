@@ -27,13 +27,13 @@ export default function ProjectDetailPage() {
 
     if (!project) {
         return (
-            <main className="min-h-screen bg-base flex flex-col items-center justify-center text-center p-6">
+            <main className="min-h-screen bg-canvas flex flex-col items-center justify-center text-center p-6">
                 <h1 className="text-4xl font-serif font-bold text-white mb-4">Project Not Found</h1>
                 <p className="text-muted mb-8">The project you are looking for does not exist.</p>
                 <MagneticButton>
                     <button
                         onClick={() => router.push("/")}
-                        className="py-4 px-8 bg-gradient-accent text-white font-bold rounded-2xl flex items-center gap-2"
+                        className="py-4 px-8 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl flex items-center gap-2"
                     >
                         <ArrowLeft size={20} /> Back to Home
                     </button>
@@ -49,13 +49,13 @@ export default function ProjectDetailPage() {
             {/* HERO SECTION */}
             <section className="relative pt-40 pb-20 overflow-hidden">
                 {/* Background Glow */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(108,99,255,0.15)_0%,transparent_50%)] pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full glow-radial-top pointer-events-none" />
 
                 <div className="container mx-auto px-6 lg:px-12">
                     <FadeIn direction="up">
                         <button
                             onClick={() => router.back()}
-                            className="flex items-center gap-2 text-muted hover:text-cyan transition-colors mb-8 font-mono text-sm tracking-widest uppercase"
+                            className="flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 font-mono text-sm tracking-widest uppercase"
                         >
                             <ArrowLeft size={16} /> Back to Projects
                         </button>
@@ -64,7 +64,7 @@ export default function ProjectDetailPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <FadeIn direction="right" delay={0.2}>
-                                <span className="text-violet font-mono text-sm tracking-[0.3em] uppercase mb-4 block">Case Study</span>
+                                <span className="text-accent font-mono text-sm tracking-[0.3em] uppercase mb-4 block">Case Study</span>
                                 <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
                                     {project.title}
                                 </h1>
@@ -75,7 +75,7 @@ export default function ProjectDetailPage() {
                                 <div className="flex flex-wrap gap-4 mb-12">
                                     {project.live !== "#" && (
                                         <MagneticButton>
-                                            <a href={project.live} target="_blank" className="py-4 px-8 bg-gradient-accent text-white font-bold rounded-2xl flex items-center gap-2 shadow-glow">
+                                            <a href={project.live} target="_blank" className="py-4 px-8 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl flex items-center gap-2 shadow-glow">
                                                 Live Preview <Globe size={20} />
                                             </a>
                                         </MagneticButton>
@@ -120,7 +120,7 @@ export default function ProjectDetailPage() {
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="text-center mb-16">
                         <FadeIn direction="down">
-                            <span className="text-cyan font-mono text-xs tracking-[0.3em] uppercase mb-4 block">Visual Showcase</span>
+                            <span className="text-accent font-mono text-xs tracking-[0.3em] uppercase mb-4 block">Visual Showcase</span>
                             <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Screenshots</h2>
                             <p className="text-muted text-lg max-w-2xl mx-auto">
                                 High-resolution snapshots of the platform interface and user experience.
@@ -154,13 +154,13 @@ export default function ProjectDetailPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                         <div className="lg:col-span-4">
                             <FadeIn direction="right">
-                                <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Key Features & <br /> <span className="text-violet">Technologies</span></h2>
+                                <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Key Features & <br /> <span className="text-accent">Technologies</span></h2>
                                 <p className="text-muted text-lg mb-8">
                                     A deep dive into the technical implementation and the powerful features that make {project.title} unique.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag, i) => (
-                                        <span key={i} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-widest text-cyan font-bold">
+                                        <span key={i} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-widest text-accent font-bold">
                                             {tag}
                                         </span>
                                     ))}
@@ -171,8 +171,8 @@ export default function ProjectDetailPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {project.features.map((feature, i) => (
                                     <FadeIn key={i} direction="up" delay={0.1 * i}>
-                                        <div className="p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-violet/20 transition-all duration-500 h-full group">
-                                            <div className="w-10 h-10 rounded-xl bg-violet/10 flex items-center justify-center text-violet mb-6 group-hover:scale-110 transition-transform">
+                                        <div className="p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-foreground/20 transition-all duration-500 h-full group">
+                                            <div className="w-10 h-10 rounded-xl bg-foreground/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                                 <CheckCircle2 size={24} />
                                             </div>
                                             <p className="text-white/80 leading-relaxed text-sm">
@@ -191,11 +191,11 @@ export default function ProjectDetailPage() {
             <section className="py-32 relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="p-16 lg:p-24 rounded-[3.5rem] bg-gradient-to-br from-[#0a0a0a] to-[#151515] border border-white/5 relative overflow-hidden text-center shadow-2xl">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet/5 to-cyan/5 pointer-events-none" />
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-foreground/5 to-accent/5 pointer-events-none" />
                         <div className="relative z-10">
                             <h2 className="text-3xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8">
                                 Have a Similar <br className="hidden md:block" />
-                                <span className="text-cyan">Project</span> in Mind?
+                                <span className="text-accent">Project</span> in Mind?
                             </h2>
                             <p className="text-muted text-base md:text-xl max-w-2xl mx-auto mb-10 md:mb-12">
                                 Let&apos;s build something extraordinary together. Our team is ready to bring your vision to life.
@@ -204,13 +204,13 @@ export default function ProjectDetailPage() {
                                 <MagneticButton>
                                     <button
                                         onClick={() => router.push("/contact")}
-                                        className="group flex items-center justify-center gap-3 md:gap-4 py-5 md:py-6 px-8 md:px-12 bg-gradient-accent text-white font-bold rounded-2xl shadow-glow transition-all duration-300 w-full sm:w-auto"
+                                        className="group flex items-center justify-center gap-3 md:gap-4 py-5 md:py-6 px-8 md:px-12 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300 w-full sm:w-auto"
                                     >
                                         <span className="whitespace-nowrap">Get a Free Quote</span>
                                         <ArrowLeft size={20} className="rotate-180 group-hover:translate-x-2 transition-transform" />
                                     </button>
                                 </MagneticButton>
-                                <a href="mailto:hello@zsofthub.com" className="text-white/70 hover:text-cyan transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
+                                <a href="mailto:hello@zsofthub.com" className="text-white/70 hover:text-accent transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
                                     hello@zsofthub.com
                                 </a>
                             </div>

@@ -30,11 +30,11 @@ export default function About() {
                 <div className="flex flex-col gap-10">
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-[2px] bg-gradient-accent" />
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase">// WHO WE ARE</span>
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase">// WHO WE ARE</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-text-primary leading-tight">
-                        We craft <span className="text-violet">intelligent</span> digital solutions that drive results.
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight">
+                        We craft <span className="text-accent">intelligent</span> digital solutions that drive results.
                     </h2>
 
                     <div className="flex flex-col gap-6 text-muted text-lg leading-relaxed max-w-xl">
@@ -49,8 +49,8 @@ export default function About() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                         {stats.map((stat, index) => (
                             <FadeIn key={stat.label} delay={index * 0.2} direction="right" distance={30}>
-                                <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-surface border border-white/5 shadow-glow-cyan hover:scale-105 transition-transform duration-300">
-                                    <span className="text-4xl font-bold text-cyan mb-2">
+                                <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-surface border border-white/5 shadow-glow-accent hover:scale-105 transition-transform duration-300">
+                                    <span className="text-4xl font-bold text-accent mb-2">
                                         <Counter value={stat.value} suffix={stat.suffix} />
                                     </span>
                                     <span className="text-xs text-muted font-mono text-center uppercase tracking-widest leading-normal whitespace-pre-wrap">
@@ -82,8 +82,8 @@ export default function About() {
                         />
                     </motion.div>
 
-                    <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-cyan/50" />
-                    <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-violet/50" />
+                    <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-accent/50" />
+                    <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-foreground/50" />
                 </motion.div>
             </div>
         </section>

@@ -49,7 +49,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
             transition={{ delay: index * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
             <div
-                className={`border border-white/5 rounded-xl overflow-hidden transition-all duration-300 ${isOpen ? "bg-surface border-violet/20 shadow-[0_0_20px_rgba(108,99,255,0.08)]" : "bg-surface/50 hover:bg-surface hover:border-white/10"
+                className={`border border-white/5 rounded-xl overflow-hidden transition-all duration-300 ${isOpen ? "bg-surface border-foreground/20 shadow-glow-accent" : "bg-surface/50 hover:bg-surface hover:border-white/10"
                     }`}
             >
                 <button
@@ -62,7 +62,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
                     <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className={`flex-shrink-0 p-1 rounded-full transition-colors duration-300 ${isOpen ? "text-cyan" : "text-white/40"}`}
+                        className={`flex-shrink-0 p-1 rounded-full transition-colors duration-300 ${isOpen ? "text-accent" : "text-white/40"}`}
                     >
                         <ChevronDown size={20} />
                     </motion.div>
@@ -79,7 +79,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
                         >
                             <div className="px-6 md:px-7 pb-6 md:pb-7">
                                 <div className="w-full h-[1px] bg-white/5 mb-5" />
-                                <p style={{ color: "#b0b0b0" }} className="text-sm md:text-base leading-relaxed">
+                                <p className="text-foreground text-sm md:text-base leading-relaxed">
                                     {faq.answer}
                                 </p>
                             </div>
@@ -101,18 +101,18 @@ export default function FAQ() {
     return (
         <section id="faq" className="py-10 lg:py-32 bg-transparent overflow-hidden relative">
             {/* Background glows */}
-            <div className="absolute top-[20%] right-[-15%] w-[500px] h-[500px] bg-violet/5 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-cyan/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-[20%] right-[-15%] w-[500px] h-[500px] bg-foreground/5 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-6 lg:px-12">
                 {/* Section Header */}
                 <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase">
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase">
                             FAQ
                         </span>
                     </FadeIn>
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-text-primary leading-tight">
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight">
                         Got questions?<br />
                         <span className="gradient-text-animated">We've got answers</span>.
                     </h2>

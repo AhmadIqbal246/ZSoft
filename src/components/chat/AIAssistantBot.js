@@ -75,7 +75,7 @@ export default function AIAssistantBot() {
             {isOpen && (
                 <div
                     style={{ height: isMinimized ? "60px" : "580px" }}
-                    className={`transition-all duration-300 ease-in-out w-[290px] min-[350px]:w-[320px] md:w-[380px] bg-base/95 border border-white/10 rounded-[1.5rem] shadow-2xl flex flex-col mb-4 overflow-hidden`}
+                    className={`transition-all duration-300 ease-in-out w-[290px] min-[350px]:w-[320px] md:w-[380px] bg-canvas/95 border border-white/10 rounded-[1.5rem] shadow-2xl flex flex-col mb-4 overflow-hidden`}
                 >
                     {/* Header */}
                     <div className="p-4 border-b border-white/5 bg-gradient-accent flex items-center justify-between">
@@ -104,17 +104,17 @@ export default function AIAssistantBot() {
                     {!isMinimized && (
                         <>
                             {/* Messages Area */}
-                            <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-base/80">
+                            <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-canvas/80">
                                 {messages.map((m, i) => (
                                     <div
                                         key={i}
                                         className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                                     >
                                         <div className={`flex gap-2 max-w-[90%] ${m.role === "user" ? "flex-row-reverse" : ""}`}>
-                                            <div className={`w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center ${m.role === "user" ? "bg-cyan/10 text-cyan" : "bg-violet/10 text-violet"}`}>
+                                            <div className={`w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center ${m.role === "user" ? "bg-accent/10 text-accent" : "bg-foreground/10 text-accent"}`}>
                                                 {m.role === "user" ? <User size={14} /> : <Bot size={14} />}
                                             </div>
-                                            <div className={`p-3 rounded-xl text-xs sm:text-sm leading-relaxed ${m.role === "user" ? "bg-gradient-accent text-white rounded-tr-none" : "bg-surface text-white/90 border border-white/5 rounded-tl-none prose prose-invert prose-sm max-w-none"}`}>
+                                            <div className={`p-3 rounded-xl text-xs sm:text-sm leading-relaxed ${m.role === "user" ? "bg-gradient-btn text-btn-primary-foreground rounded-tr-none" : "bg-surface text-white/90 border border-white/5 rounded-tl-none prose prose-invert prose-sm max-w-none"}`}>
                                                 <ReactMarkdown>
                                                     {m.content}
                                                 </ReactMarkdown>
@@ -125,7 +125,7 @@ export default function AIAssistantBot() {
                                 {isLoading && messages[messages.length - 1].role !== 'assistant' && (
                                     <div className="flex justify-start">
                                         <div className="bg-surface border border-white/5 p-3 rounded-xl rounded-tl-none text-white/50 flex items-center gap-2">
-                                            <Loader2 size={14} className="animate-spin text-violet" />
+                                            <Loader2 size={14} className="animate-spin text-accent" />
                                             <span className="text-[10px] font-mono uppercase tracking-widest">thinking...</span>
                                         </div>
                                     </div>
@@ -141,12 +141,12 @@ export default function AIAssistantBot() {
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
                                         placeholder="Type a message..."
-                                        className="w-full bg-base border border-white/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan/50 focus:bg-white/5 transition-all outline-none"
+                                        className="w-full bg-canvas border border-white/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-accent/50 focus:bg-white/5 transition-all outline-none"
                                     />
                                     <button
                                         type="submit"
                                         disabled={!input.trim() || isLoading}
-                                        className="w-10 h-10 rounded-lg bg-gradient-accent flex items-center justify-center text-white shadow-glow disabled:opacity-50 disabled:grayscale transition-all active:scale-95 flex-shrink-0 hover:opacity-90"
+                                        className="w-10 h-10 rounded-lg bg-gradient-btn flex items-center justify-center text-btn-primary-foreground shadow-glow disabled:opacity-50 disabled:grayscale transition-all active:scale-95 flex-shrink-0 hover:opacity-90"
                                     >
                                         <Send size={18} />
                                     </button>
@@ -161,7 +161,7 @@ export default function AIAssistantBot() {
             {/* Toggle Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`flex items-center justify-center text-white shadow-[0_10px_30px_rgba(108,99,255,0.4)] hover:scale-105 transition-all duration-300 relative bg-gradient-accent h-12 md:h-14 ${isOpen ? 'w-12 md:w-14 rounded-xl md:rounded-[1.25rem]' : 'w-12 sm:w-auto px-0 sm:px-6 rounded-xl md:rounded-[1.25rem] gap-2 md:gap-3'}`}
+                className={`flex items-center justify-center text-btn-primary-foreground shadow-glow-accent hover:scale-105 transition-all duration-300 relative bg-gradient-btn h-12 md:h-14 ${isOpen ? 'w-12 md:w-14 rounded-xl md:rounded-[1.25rem]' : 'w-12 sm:w-auto px-0 sm:px-6 rounded-xl md:rounded-[1.25rem] gap-2 md:gap-3'}`}
             >
                 {isOpen ? <X size={24} /> : (
                     <>

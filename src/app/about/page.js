@@ -22,10 +22,10 @@ import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/animations/MagneticButton";
 
 const stats = [
-    { label: "Happy Clients", value: "50+", icon: <Users size={24} />, color: "text-cyan" },
-    { label: "Projects Delivered", value: "100+", icon: <Rocket size={24} />, color: "text-violet" },
-    { label: "Client Satisfaction", value: "5.0/5", icon: <Heart size={24} />, color: "text-cyan" },
-    { label: "Support Available", value: "24/7", icon: <Clock size={24} />, color: "text-violet" },
+    { label: "Happy Clients", value: "50+", icon: <Users size={24} />, color: "text-accent" },
+    { label: "Projects Delivered", value: "100+", icon: <Rocket size={24} />, color: "text-accent" },
+    { label: "Client Satisfaction", value: "5.0/5", icon: <Heart size={24} />, color: "text-accent" },
+    { label: "Support Available", value: "24/7", icon: <Clock size={24} />, color: "text-accent" },
 ];
 
 const values = [
@@ -152,7 +152,7 @@ function ProjectCarousel({ images, title }) {
                 {images.map((_, i) => (
                     <div
                         key={i}
-                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-cyan w-4' : 'bg-white/30'}`}
+                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-accent w-4' : 'bg-white/30'}`}
                     />
                 ))}
             </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
             <section className="relative pt-40 pb-20 overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <FadeIn direction="down" delay={0.2}>
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase mb-6 block">OUR STORY</span>
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">OUR STORY</span>
                     </FadeIn>
                     <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight">
                         We&apos;re Building the <br />
@@ -205,8 +205,8 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Mission */}
                         <FadeIn direction="left" delay={0.2}>
-                            <div className="p-12 rounded-[2rem] bg-surface border border-white/5 h-full flex flex-col gap-8 hover:border-violet/20 transition-all duration-500">
-                                <div className="w-16 h-16 rounded-2xl bg-violet/10 flex items-center justify-center text-violet">
+                            <div className="p-12 rounded-[2rem] bg-surface border border-white/5 h-full flex flex-col gap-8 hover:border-foreground/20 transition-all duration-500">
+                                <div className="w-16 h-16 rounded-2xl bg-foreground/10 flex items-center justify-center text-accent">
                                     <Rocket size={32} />
                                 </div>
                                 <h2 className="text-4xl font-serif font-bold text-white">Our Mission</h2>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                                 <ul className="flex flex-col gap-4 mt-4">
                                     {["Deliver innovative solutions that exceed expectations", "Build long-term partnerships with our clients", "Stay ahead of technology trends and best practices"].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-white/80">
-                                            <CheckCircle2 size={18} className="text-violet" />
+                                            <CheckCircle2 size={18} className="text-accent" />
                                             <span>{item}</span>
                                         </li>
                                     ))}
@@ -226,8 +226,8 @@ export default function AboutPage() {
 
                         {/* Vision */}
                         <FadeIn direction="right" delay={0.4}>
-                            <div className="p-12 rounded-[2rem] bg-surface border border-white/5 h-full flex flex-col gap-8 hover:border-cyan/20 transition-all duration-500">
-                                <div className="w-16 h-16 rounded-2xl bg-cyan/10 flex items-center justify-center text-cyan">
+                            <div className="p-12 rounded-[2rem] bg-surface border border-white/5 h-full flex flex-col gap-8 hover:border-accent/20 transition-all duration-500">
+                                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
                                     <Lightbulb size={32} />
                                 </div>
                                 <h2 className="text-4xl font-serif font-bold text-white">Our Vision</h2>
@@ -237,7 +237,7 @@ export default function AboutPage() {
                                 <ul className="flex flex-col gap-4 mt-4">
                                     {["Lead the industry in AI and web development innovation", "Create technology that makes a positive impact", "Build a team of world-class professionals"].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-white/80">
-                                            <CheckCircle2 size={18} className="text-cyan" />
+                                            <CheckCircle2 size={18} className="text-accent" />
                                             <span>{item}</span>
                                         </li>
                                     ))}
@@ -249,7 +249,7 @@ export default function AboutPage() {
             </section>
 
             {/* CORE VALUES */}
-            <section className="py-32 bg-base/50">
+            <section className="py-32 bg-canvas/50">
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="text-center mb-20">
                         <FadeIn direction="down">
@@ -269,7 +269,7 @@ export default function AboutPage() {
                                 transition={{ delay: i * 0.1 }}
                                 className="group p-10 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all duration-500"
                             >
-                                <div className="mb-6 text-violet group-hover:scale-110 transition-transform duration-500">{value.icon}</div>
+                                <div className="mb-6 text-accent group-hover:scale-110 transition-transform duration-500">{value.icon}</div>
                                 <h4 className="text-xl font-bold text-white mb-4">{value.title}</h4>
                                 <p className="text-muted text-sm leading-relaxed">{value.description}</p>
                             </motion.div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
 
                     <div className="max-w-4xl mx-auto relative px-6">
                         {/* Center Line */}
-                        <div className="absolute left-[31px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-violet/0 via-violet/50 to-cyan/0" />
+                        <div className="absolute left-[31px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-foreground/0 via-foreground/50 to-accent/0" />
 
                         <div className="flex flex-col gap-20">
                             {journey.map((item, i) => (
@@ -305,14 +305,14 @@ export default function AboutPage() {
                                 >
                                     <div className={`w-full md:w-1/2 flex ${i % 2 === 0 ? 'justify-end text-right' : 'justify-start text-left'}`}>
                                         <div className="p-8 rounded-3xl bg-surface/50 border border-white/5 hover:border-white/10 transition-all">
-                                            <span className="text-violet font-mono text-xl font-bold mb-2 block">{item.year}</span>
+                                            <span className="text-accent font-mono text-xl font-bold mb-2 block">{item.year}</span>
                                             <h4 className="text-xl font-serif font-bold text-white mb-3">{item.title}</h4>
                                             <p className="text-muted text-sm leading-relaxed">{item.description}</p>
                                         </div>
                                     </div>
 
                                     {/* Circle Dot */}
-                                    <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-surface border-4 border-violet shadow-glow z-10" />
+                                    <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-surface border-4 border-foreground shadow-glow z-10" />
 
                                     <div className="hidden md:block w-1/2" />
                                 </motion.div>
@@ -328,7 +328,7 @@ export default function AboutPage() {
                     <div className="flex flex-col lg:flex-row items-end justify-between gap-10 mb-20">
                         <div className="max-w-2xl">
                             <FadeIn direction="right">
-                                <span className="text-cyan font-mono text-sm tracking-widest uppercase mb-6 block">OUR WORK</span>
+                                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">OUR WORK</span>
                                 <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Featured Projects</h2>
                                 <p className="text-muted text-lg">
                                     Explore some of our most successful projects that showcase our expertise in web development, AI solutions, and custom software development.
@@ -336,7 +336,7 @@ export default function AboutPage() {
                             </FadeIn>
                         </div>
                         <MagneticButton>
-                            <Link href="/#projects" className="group flex items-center gap-3 text-cyan font-bold uppercase tracking-widest text-sm hover:text-white transition-all">
+                            <Link href="/#projects" className="group flex items-center gap-3 text-accent font-bold uppercase tracking-widest text-sm hover:text-white transition-all">
                                 View All Case Studies <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                             </Link>
                         </MagneticButton>
@@ -352,17 +352,17 @@ export default function AboutPage() {
                                 className="group p-8 lg:p-12 rounded-[2.5rem] bg-surface/50 border border-white/5 hover:border-white/10 transition-all duration-700 grid grid-cols-1 lg:grid-cols-12 gap-12 overflow-hidden relative"
                             >
                                 {/* Background Highlight */}
-                                <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-violet/5 blur-[120px] rounded-full group-hover:bg-violet/10 transition-all duration-700" />
+                                <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-foreground/5 blur-[120px] rounded-full group-hover:bg-foreground/10 transition-all duration-700" />
 
                                 {/* Info */}
                                 <div className="lg:col-span-7 flex flex-col gap-8">
                                     <div className="flex flex-col gap-2 relative z-30">
                                         <div className="flex items-center justify-between">
-                                            <span className="text-violet font-mono text-xs uppercase tracking-[0.2em]">{project.category}</span>
+                                            <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">{project.category}</span>
                                             <a
                                                 href={project.live}
                                                 target="_blank"
-                                                className="flex items-center gap-2 text-cyan hover:text-white transition-colors text-[10px] font-bold uppercase tracking-widest"
+                                                className="flex items-center gap-2 text-accent hover:text-white transition-colors text-[10px] font-bold uppercase tracking-widest"
                                             >
                                                 Live Preview <Globe size={14} />
                                             </a>
@@ -380,13 +380,13 @@ export default function AboutPage() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
                                         <div>
                                             <h5 className="text-white font-bold mb-4 flex items-center gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                                                 Key Results:
                                             </h5>
                                             <ul className="flex flex-col gap-3">
                                                 {project.results.map((res, k) => (
                                                     <li key={k} className="text-muted text-sm flex items-start gap-2">
-                                                        <CheckCircle2 size={16} className="text-cyan flex-shrink-0 mt-0.5" />
+                                                        <CheckCircle2 size={16} className="text-accent flex-shrink-0 mt-0.5" />
                                                         {res}
                                                     </li>
                                                 ))}
@@ -394,10 +394,10 @@ export default function AboutPage() {
                                         </div>
                                         {project.testimonial && (
                                             <div className="p-6 rounded-2xl bg-white/5 italic relative">
-                                                <p style={{ color: '#b0b0b0' }} className="text-xs leading-relaxed mb-4">
+                                <p className="text-foreground text-xs leading-relaxed mb-4">
                                                     &ldquo;{project.testimonial.text}&rdquo;
                                                 </p>
-                                                <span className="text-violet text-xs font-bold font-mono">— {project.testimonial.author}</span>
+                                                <span className="text-accent text-xs font-bold font-mono">— {project.testimonial.author}</span>
                                             </div>
                                         )}
                                     </div>
@@ -408,7 +408,7 @@ export default function AboutPage() {
                                     <div className="w-full aspect-video rounded-3xl bg-black border border-white/10 shadow-2xl overflow-hidden relative group-hover:scale-105 transition-all duration-700">
                                         <ProjectCarousel images={project.images} title={project.title} />
                                         <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 z-20">
-                                            <div className="text-[10px] text-cyan font-mono uppercase tracking-[0.2em] mb-1">CLIENT</div>
+                                            <div className="text-[10px] text-accent font-mono uppercase tracking-[0.2em] mb-1">CLIENT</div>
                                             <div className="text-lg font-bold text-white font-serif">{project.client}</div>
                                         </div>
                                     </div>
@@ -428,23 +428,23 @@ export default function AboutPage() {
             <section className="py-32 relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="p-16 lg:p-24 rounded-[3.5rem] bg-gradient-to-br from-[#0a0a0a] to-[#151515] border border-white/5 relative overflow-hidden text-center shadow-2xl">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet/5 to-cyan/5 pointer-events-none" />
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-foreground/5 to-accent/5 pointer-events-none" />
                         <div className="relative z-10">
                             <h2 className="text-3xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8">
                                 Ready to Transform <br className="hidden md:block" />
-                                Your <span className="text-cyan">Business</span>?
+                                Your <span className="text-accent">Business</span>?
                             </h2>
                             <p className="text-muted text-base md:text-xl max-w-2xl mx-auto mb-10 md:mb-12">
                                 Let&apos;s discuss how our technology solutions can help your business grow and succeed in the digital age.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <MagneticButton>
-                                    <Link href="/contact" className="group flex items-center justify-center gap-3 md:gap-4 py-5 md:py-6 px-8 md:px-12 bg-gradient-accent text-white font-bold rounded-2xl shadow-glow transition-all duration-300 w-full sm:w-auto">
+                                    <Link href="/contact" className="group flex items-center justify-center gap-3 md:gap-4 py-5 md:py-6 px-8 md:px-12 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300 w-full sm:w-auto">
                                         <span className="whitespace-nowrap">Get Free Quote</span>
                                         <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </MagneticButton>
-                                <a href="mailto:hello@zsofthub.com" className="text-white/70 hover:text-cyan transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
+                                <a href="mailto:hello@zsofthub.com" className="text-white/70 hover:text-accent transition-colors font-mono tracking-widest uppercase text-xs md:text-sm">
                                     hello@zsofthub.com
                                 </a>
                             </div>

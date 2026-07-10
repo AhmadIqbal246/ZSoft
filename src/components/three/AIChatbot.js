@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import { theme, rgbaFromHex } from "@/lib/theme";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -42,7 +43,7 @@ function RoboModel() {
                         width: '100%',
                         height: '100%',
                         background: 'transparent',
-                        filter: 'drop-shadow(0 0 30px rgba(0, 242, 255, 0.5)) drop-shadow(0 0 60px rgba(108, 99, 255, 0.3))'
+                        filter: `drop-shadow(0 0 30px ${rgbaFromHex(theme.colors.accent, 0.5)}) drop-shadow(0 0 60px ${rgbaFromHex(theme.colors.foreground, 0.3)})`
                     }}
                 />
             </div>

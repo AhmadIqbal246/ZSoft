@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { theme } = require("./src/lib/theme.js");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,14 +10,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        base: "#080808",
-        surface: "#111111",
-        deep: "#1a1a2e",
-        violet: "#6c63ff",
-        cyan: "#00d9ff",
-        "text-primary": "#f5f5f5",
-        muted: "#888888",
-        border: "rgba(255, 255, 255, 0.08)",
+        canvas: theme.colors.canvas,
+        surface: theme.colors.surface,
+        deep: theme.colors.deep,
+        foreground: theme.colors.foreground,
+        body: theme.colors.body,
+        muted: theme.colors.muted,
+        accent: theme.colors.accent,
+        tertiary: theme.colors.tertiary,
+        border: theme.colors.border,
+        "btn-primary": theme.colors.buttonPrimary,
+        "btn-primary-foreground": theme.colors.buttonPrimaryForeground,
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "serif"],
@@ -23,17 +28,19 @@ module.exports = {
         mono: ["var(--font-jetbrains)", "monospace"],
       },
       backgroundImage: {
-        "gradient-accent": "linear-gradient(135deg, #6c63ff, #00d9ff)",
-        "gradient-hero-bg": "radial-gradient(ellipse at 60% 50%, #1a1a2e 0%, #080808 70%)",
-        "gradient-text": "linear-gradient(90deg, #6c63ff, #00d9ff)",
+        "gradient-accent": theme.gradients.accent,
+        "gradient-btn": theme.gradients.button,
+        "gradient-hero-bg": theme.gradients.heroBg,
+        "gradient-text": theme.gradients.text,
+        "gradient-text-highlight": theme.gradients.textHighlight,
       },
       boxShadow: {
-        glow: "0 0 20px rgba(108, 99, 255, 0.25), 0 0 60px rgba(108, 99, 255, 0.1)",
-        "glow-cyan": "0 0 20px rgba(0, 217, 255, 0.2), 0 0 60px rgba(0, 217, 255, 0.05)",
+        glow: theme.shadow.glow,
+        "glow-accent": theme.shadow.glowAccent,
       },
       animation: {
-        'slow-drift': 'aurora 20s infinite alternate-reverse',
-      }
+        "slow-drift": "aurora 20s infinite alternate-reverse",
+      },
     },
   },
   plugins: [

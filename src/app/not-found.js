@@ -6,10 +6,10 @@ import MagneticButton from "@/components/animations/MagneticButton";
 
 export default function NotFound() {
     return (
-        <div className="min-h-screen bg-base flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="min-h-screen bg-canvas flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background glitch effect */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="animate-pulse w-full h-full bg-[radial-gradient(circle_at_center,var(--color-violet)_0%,transparent_60%)]" />
+                <div className="animate-pulse w-full h-full bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_60%)]" />
             </div>
 
             <motion.h1
@@ -31,7 +31,7 @@ export default function NotFound() {
                     <span className="text-4xl">🛸</span>
                 </motion.div>
 
-                <h2 className="text-4xl md:text-6xl font-serif font-bold text-text-primary">
+                <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
                     Lost in Space?
                 </h2>
                 <p className="text-muted text-lg font-mono">
@@ -40,7 +40,7 @@ export default function NotFound() {
 
                 <MagneticButton>
                     <Link href="/">
-                        <button className="px-12 py-4 bg-gradient-accent text-base font-bold rounded-lg shadow-glow hover:scale-110 transition-transform duration-300">
+                        <button className="px-12 py-4 bg-gradient-btn text-btn-primary-foreground text-base font-bold rounded-lg shadow-glow hover:scale-110 transition-transform duration-300">
                             Return Home
                         </button>
                     </Link>

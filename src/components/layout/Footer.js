@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="relative pt-32 pb-10 bg-transparent border-t border-white/5 overflow-hidden">
             {/* Background Decorative Element */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-violet/50 to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-foreground/50 to-transparent" />
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 {/* Big CTA Section */}
@@ -25,7 +25,7 @@ export default function Footer() {
                     </div>
                     <MagneticButton>
                         <Link href="/contact">
-                            <div className="group flex items-center gap-3 py-5 px-10 bg-gradient-accent text-white font-bold rounded-2xl shadow-glow transition-all duration-300">
+                            <div className="group flex items-center gap-3 py-5 px-10 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300">
                                 <span>Get a Free Quote</span>
                                 <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                             </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                                 <div className="w-12 h-12 rounded-xl bg-gradient-accent flex items-center justify-center font-bold text-xl shadow-glow transition-transform duration-500 group-hover:rotate-12">
                                     N
                                 </div>
-                                <span className="font-serif text-3xl font-bold tracking-tight text-white group-hover:text-cyan transition-colors">
+                                <span className="font-serif text-3xl font-bold tracking-tight text-white group-hover:text-accent transition-colors">
                                     Z Soft
                                 </span>
                             </div>
@@ -54,7 +54,7 @@ export default function Footer() {
                                 href="https://github.com/AhmadIqbal246"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-cyan hover:border-cyan/30 transition-all shadow-lg"
+                                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"
                             >
                                 <Github size={18} />
                             </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                                 href="https://www.linkedin.com/in/m-ahmad-iqbal"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-cyan hover:border-cyan/30 transition-all shadow-lg"
+                                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"
                             >
                                 <Linkedin size={18} />
                             </a>
@@ -73,10 +73,10 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs">Services</h4>
                         <div className="flex flex-col gap-4 text-muted text-sm">
-                            <Link href="/services" className="hover:text-cyan transition-colors">AI & RAG Systems</Link>
-                            <Link href="#skills" className="hover:text-cyan transition-colors">Web Development</Link>
-                            <Link href="#skills" className="hover:text-cyan transition-colors">SaaS Solutions</Link>
-                            <Link href="#skills" className="hover:text-cyan transition-colors">Cloud Architecture</Link>
+                            <Link href="/services" className="hover:text-accent transition-colors">AI & RAG Systems</Link>
+                            <Link href="#skills" className="hover:text-accent transition-colors">Web Development</Link>
+                            <Link href="#skills" className="hover:text-accent transition-colors">SaaS Solutions</Link>
+                            <Link href="#skills" className="hover:text-accent transition-colors">Cloud Architecture</Link>
                         </div>
                     </div>
 
@@ -84,11 +84,11 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs">Company</h4>
                         <div className="flex flex-col gap-4 text-muted text-sm">
-                            <Link href="/about" className="hover:text-violet transition-colors">About Us</Link>
-                            <Link href="/team" className="hover:text-violet transition-colors">Our Team</Link>
-                            <Link href="#projects" className="hover:text-violet transition-colors">Our Work</Link>
-                            <Link href="#faq" className="hover:text-violet transition-colors">FAQs</Link>
-                            <Link href="#contact" className="hover:text-violet transition-colors">Contact</Link>
+                            <Link href="/about" className="hover:text-accent transition-colors">About Us</Link>
+                            <Link href="/team" className="hover:text-accent transition-colors">Our Team</Link>
+                            <Link href="#projects" className="hover:text-accent transition-colors">Our Work</Link>
+                            <Link href="#faq" className="hover:text-accent transition-colors">FAQs</Link>
+                            <Link href="#contact" className="hover:text-accent transition-colors">Contact</Link>
                         </div>
                     </div>
 
@@ -96,16 +96,16 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs">Get in Touch</h4>
                         <div className="flex flex-col gap-4 text-muted text-sm">
-                            <a href="mailto:hello@zsofthub.com" className="flex items-center gap-3 hover:text-cyan transition-colors">
-                                <Mail size={16} className="text-cyan" />
+                            <a href="mailto:hello@zsofthub.com" className="flex items-center gap-3 hover:text-accent transition-colors">
+                                <Mail size={16} className="text-accent" />
                                 hello@zsofthub.com
                             </a>
                             <div className="flex items-center gap-3">
-                                <Phone size={16} className="text-cyan" />
+                                <Phone size={16} className="text-accent" />
                                 +923150401307
                             </div>
                             <div className="flex items-center gap-3">
-                                <MapPin size={16} className="text-cyan" />
+                                <MapPin size={16} className="text-accent" />
                                 DHA Phase 8, Lahore
                             </div>
                         </div>

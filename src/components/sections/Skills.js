@@ -35,10 +35,10 @@ export default function Skills() {
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase">// OUR TECH STACK</span>
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase">// OUR TECH STACK</span>
                     </FadeIn>
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-text-primary">
-                        Powered by modern <span className="text-cyan">technologies</span>.
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+                        Powered by modern <span className="text-accent">technologies</span>.
                     </h2>
                 </div>
 
@@ -48,7 +48,7 @@ export default function Skills() {
                         <button
                             key={cat.id}
                             onClick={() => setActiveTab(cat.id)}
-                            className={`relative px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-colors duration-300 ${activeTab === cat.id ? "text-base font-bold" : "text-muted hover:text-text-primary"
+                            className={`relative px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-colors duration-300 ${activeTab === cat.id ? "text-base font-bold" : "text-muted hover:text-foreground"
                                 }`}
                         >
                             {activeTab === cat.id && (
@@ -75,7 +75,7 @@ export default function Skills() {
                                 exit={{ opacity: 0, scale: 0.8 }}
                                 transition={{ duration: 0.4, delay: index * 0.05 }}
                                 whileHover={{ y: -10 }}
-                                className="group p-8 rounded-2xl bg-surface border border-white/5 flex flex-col items-center justify-center gap-4 shadow-glow hover:border-violet/30 transition-all duration-300"
+                                className="group p-8 rounded-2xl bg-surface border border-white/5 flex flex-col items-center justify-center gap-4 shadow-glow hover:border-foreground/30 transition-all duration-300"
                             >
                                 <div
                                     className="text-5xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-[360deg]"
@@ -83,7 +83,7 @@ export default function Skills() {
                                 >
                                     {skill.icon}
                                 </div>
-                                <span className="text-sm font-mono text-muted group-hover:text-text-primary">
+                                <span className="text-sm font-mono text-muted group-hover:text-foreground">
                                     {skill.name}
                                 </span>
                             </motion.div>
@@ -97,7 +97,7 @@ export default function Skills() {
                         {[...Array(4)].map((_, i) => (
                             <div key={i} className="flex gap-20 items-center">
                                 {skills.map(skill => (
-                                    <div key={skill.name} className="flex items-center gap-4 text-white/20 hover:text-cyan transition-colors duration-300">
+                                    <div key={skill.name} className="flex items-center gap-4 text-white/20 hover:text-accent transition-colors duration-300">
                                         <div className="text-4xl">{skill.icon}</div>
                                         <span className="text-2xl font-serif font-bold uppercase tracking-widest">{skill.name}</span>
                                     </div>

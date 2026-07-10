@@ -24,25 +24,25 @@ const teamStats = [
         icon: <Users size={24} />,
         number: "15+",
         label: "Team Members",
-        color: "text-violet"
+        color: "text-accent"
     },
     {
         icon: <Award size={24} />,
         number: "50+",
         label: "Years Combined Experience",
-        color: "text-cyan"
+        color: "text-accent"
     },
     {
         icon: <Zap size={24} />,
         number: "100+",
         label: "Projects Completed",
-        color: "text-violet"
+        color: "text-accent"
     },
     {
         icon: <Shield size={24} />,
         number: "24/7",
         label: "Support Available",
-        color: "text-cyan"
+        color: "text-accent"
     }
 ];
 
@@ -129,9 +129,9 @@ const TeamMemberCard = ({ member, index }) => (
         transition={{ delay: index * 0.1 }}
         className="group relative"
     >
-        <div className="relative aspect-[3/4] overflow-hidden rounded-[2.5rem] bg-surface/50 border border-white/5 group-hover:border-violet/30 transition-all duration-700">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-[2.5rem] bg-surface/50 border border-white/5 group-hover:border-foreground/30 transition-all duration-700">
             {/* Image styling */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-t from-canvas via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
 
             {/* Fallback for local images during development if they don't exist yet */}
             <div className="absolute inset-0 bg-white/5 flex items-center justify-center text-white/5 font-serif text-8xl font-black">
@@ -148,10 +148,10 @@ const TeamMemberCard = ({ member, index }) => (
             {/* Content overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                 <div className="flex flex-col gap-3">
-                    <span className="w-fit px-4 py-1.5 rounded-full bg-cyan/20 backdrop-blur-md border border-cyan/30 text-white font-mono text-[10px] uppercase tracking-[0.2em] mb-2 font-bold shadow-glow-sm">
+                    <span className="w-fit px-4 py-1.5 rounded-full bg-accent/20 backdrop-blur-md border border-accent/30 text-white font-mono text-[10px] uppercase tracking-[0.2em] mb-2 font-bold shadow-glow-sm">
                         {member.role}
                     </span>
-                    <h3 className="text-2xl font-serif font-bold text-white group-hover:text-cyan transition-colors drop-shadow-xl">
+                    <h3 className="text-2xl font-serif font-bold text-white group-hover:text-accent transition-colors drop-shadow-xl">
                         {member.name}
                     </h3>
                 </div>
@@ -162,11 +162,11 @@ const TeamMemberCard = ({ member, index }) => (
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-xl bg-cyan text-black hover:bg-white hover:scale-110 transition-all shadow-glow flex items-center justify-center"
+                        className="p-3 rounded-xl bg-accent text-black hover:bg-white hover:scale-110 transition-all shadow-glow flex items-center justify-center"
                     >
                         <Linkedin size={20} fill="currentColor" />
                     </a>
-                    <button className="p-3 rounded-xl bg-white/10 text-white hover:bg-violet hover:scale-110 transition-all border border-white/10 flex items-center justify-center">
+                    <button className="p-3 rounded-xl bg-white/10 text-white hover:bg-foreground hover:scale-110 transition-all border border-white/10 flex items-center justify-center">
                         <Mail size={20} />
                     </button>
                 </div>
@@ -184,7 +184,7 @@ export default function TeamPage() {
             <section className="relative pt-40 pb-20 overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12 text-center">
                     <FadeIn direction="down" delay={0.2}>
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase mb-6 block">OUR PEOPLE</span>
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase mb-6 block">OUR PEOPLE</span>
                     </FadeIn>
                     <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight">
                         The Minds Behind <br />
@@ -207,7 +207,7 @@ export default function TeamPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="p-10 rounded-[2rem] bg-surface/50 border border-white/5 flex flex-col items-center text-center gap-4 hover:border-violet/20 transition-all duration-500 group"
+                                className="p-10 rounded-[2rem] bg-surface/50 border border-white/5 flex flex-col items-center text-center gap-4 hover:border-foreground/20 transition-all duration-500 group"
                             >
                                 <div className={`${stat.color} p-5 rounded-2xl bg-white/5 group-hover:scale-110 transition-transform duration-500`}>
                                     {stat.icon}
@@ -225,7 +225,7 @@ export default function TeamPage() {
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="flex flex-col items-center mb-20 text-center">
                         <FadeIn direction="down">
-                            <span className="text-cyan font-mono text-xs tracking-widest uppercase mb-4 block">VISIONARIES</span>
+                            <span className="text-accent font-mono text-xs tracking-widest uppercase mb-4 block">VISIONARIES</span>
                             <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Our Leadership</h2>
                             <p className="text-muted text-lg max-w-2xl mx-auto">
                                 Guided by industry veterans with a combined passion for technological innovation and strategic growth.
@@ -242,11 +242,11 @@ export default function TeamPage() {
             </section>
 
             {/* DEVELOPERS SECTION */}
-            <section className="py-32 bg-base/30">
+            <section className="py-32 bg-canvas/30">
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="flex flex-col items-center mb-20 text-center">
                         <FadeIn direction="down">
-                            <span className="text-violet font-mono text-xs tracking-widest uppercase mb-4 block">THE ARCHITECTS</span>
+                            <span className="text-accent font-mono text-xs tracking-widest uppercase mb-4 block">THE ARCHITECTS</span>
                             <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Core Engineering</h2>
                             <p className="text-muted text-lg max-w-2xl mx-auto">
                                 Our highly skilled developers and designers who turn complex challenges into elegant digital realities.
@@ -268,11 +268,11 @@ export default function TeamPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                         {teamValues.map((value, i) => (
                             <FadeIn key={value.id} direction="up" delay={i * 0.1}>
-                                <div className="h-full p-10 rounded-3xl bg-surface/50 border border-white/5 hover:border-cyan/20 transition-all duration-500 flex flex-col gap-6 group">
-                                    <div className="text-cyan group-hover:scale-110 transition-transform duration-500">
+                                <div className="h-full p-10 rounded-3xl bg-surface/50 border border-white/5 hover:border-accent/20 transition-all duration-500 flex flex-col gap-6 group">
+                                    <div className="text-accent group-hover:scale-110 transition-transform duration-500">
                                         {value.icon}
                                     </div>
-                                    <h4 className="text-xl font-bold text-white group-hover:text-cyan transition-colors">{value.title}</h4>
+                                    <h4 className="text-xl font-bold text-white group-hover:text-accent transition-colors">{value.title}</h4>
                                     <p className="text-muted text-sm leading-relaxed">{value.description}</p>
                                 </div>
                             </FadeIn>
@@ -285,22 +285,22 @@ export default function TeamPage() {
             <section className="py-32 relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="p-16 lg:p-24 rounded-[3.5rem] bg-gradient-to-br from-[#0a0a0a] to-[#151515] border border-white/5 relative overflow-hidden text-center shadow-2xl">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-violet/10 via-transparent to-cyan/10 pointer-events-none" />
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-foreground/10 via-transparent to-accent/10 pointer-events-none" />
                         <div className="relative z-10">
                             <h2 className="text-4xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
-                                Want to <span className="text-violet">join</span> the team?
+                                Want to <span className="text-accent">join</span> the team?
                             </h2>
                             <p className="text-muted text-xl max-w-2xl mx-auto mb-12">
                                 We&apos;re always looking for talented individuals who are passionate about pushing the boundaries of technology.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <MagneticButton>
-                                    <a href="mailto:careers@Z Soft.dev" className="group flex items-center gap-4 py-6 px-12 bg-gradient-accent text-white font-bold rounded-2xl shadow-glow transition-all duration-300">
+                                    <a href="mailto:careers@Z Soft.dev" className="group flex items-center gap-4 py-6 px-12 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow transition-all duration-300">
                                         Check Open Positions
                                         <ExternalLink size={24} className="group-hover:rotate-12 transition-transform" />
                                     </a>
                                 </MagneticButton>
-                                <a href="https://www.linkedin.com/company/Z Soft" target="_blank" rel="noopener noreferrer" className="text-white hover:text-cyan transition-colors font-mono tracking-widest uppercase text-sm">
+                                <a href="https://www.linkedin.com/company/Z Soft" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
                                     Follow us on LinkedIn
                                 </a>
                             </div>

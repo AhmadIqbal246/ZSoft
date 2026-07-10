@@ -20,11 +20,11 @@ export default function Projects() {
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="flex flex-col gap-6 mb-20">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-violet font-mono text-sm tracking-widest uppercase">// OUR WORK</span>
+                        <span className="text-accent font-mono text-sm tracking-widest uppercase">// OUR WORK</span>
                     </FadeIn>
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
-                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-text-primary">
-                            Case Studies & <br /> <span className="text-violet">Recent</span> Projects.
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+                            Case Studies & <br /> <span className="text-accent">Recent</span> Projects.
                         </h2>
                     </div>
                 </div>
@@ -61,27 +61,27 @@ function ProjectCard({ project, index }) {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-base via-base/40 to-transparent opacity-80 group-hover:opacity-100 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/40 to-transparent opacity-80 group-hover:opacity-100 transition-all duration-500" />
 
             {/* Content */}
             <div className="absolute bottom-0 left-0 p-8 w-full flex flex-col gap-4 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                     {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold text-cyan border border-white/10 uppercase tracking-widest">
+                        <span key={tag} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold text-accent border border-white/10 uppercase tracking-widest">
                             {tag}
                         </span>
                     ))}
                 </div>
 
-                <h3 className="text-2xl font-serif font-bold text-text-primary">
+                <h3 className="text-2xl font-serif font-bold text-foreground">
                     {project.title}
                 </h3>
 
                 <div className="flex items-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 relative z-20">
-                    <Link href={`/projects/${project.slug}`} className="flex items-center gap-2 text-violet hover:text-cyan transition-colors text-xs font-bold tracking-widest uppercase">
+                    <Link href={`/projects/${project.slug}`} className="flex items-center gap-2 text-accent hover:text-accent transition-colors text-xs font-bold tracking-widest uppercase">
                         Case Study <ArrowUpRight size={16} />
                     </Link>
-                    <a href={project.live} target="_blank" className="flex items-center gap-2 text-muted hover:text-text-primary transition-colors text-[10px] font-bold tracking-widest uppercase">
+                    <a href={project.live} target="_blank" className="flex items-center gap-2 text-muted hover:text-foreground transition-colors text-[10px] font-bold tracking-widest uppercase">
                         Live <Globe size={14} />
                     </a>
                 </div>
@@ -95,7 +95,7 @@ function ProjectCard({ project, index }) {
             />
 
             {/* Hover Light Effect */}
-            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(108,99,255,0.15)_0%,transparent_70%)]"
+            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 glow-radial-mouse"
                 style={{ "--mouse-x": "50%", "--mouse-y": "50%" }} // Dynamic via JS if needed
             />
         </motion.div>

@@ -1,0 +1,38 @@
+/* Generated from src/lib/theme.js — run: pnpm theme:sync */
+:root {
+  --color-canvas: #080808;
+  --color-surface: #111111;
+  --color-deep: #1a1a2e;
+  --color-foreground: #ffffff;
+  --color-body: #b0b0b0;
+  --color-muted: #888888;
+  --color-accent: #00d9ff;
+  --color-tertiary: #7c3aed;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-button-primary: #ffffff;
+  --color-button-primary-foreground: #080808;
+  --color-foreground-rgb: 255, 255, 255;
+  --color-accent-rgb: 0, 217, 255;
+  --color-tertiary-rgb: 124, 58, 237;
+  --gradient-accent: linear-gradient(135deg, #ffffff, #00d9ff);
+  --gradient-button: linear-gradient(135deg, #ffffff, #00d9ff);
+  --gradient-text: linear-gradient(90deg, #ffffff, #00d9ff);
+  --gradient-text-highlight: linear-gradient(90deg, #ffffff, #00d9ff);
+  --gradient-hero-bg: radial-gradient(ellipse at 60% 50%, #1a1a2e 0%, #080808 70%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 217, 255, 0.05));
+  --gradient-border: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 217, 255, 0.3));
+  --gradient-text-animated: linear-gradient(270deg, #ffffff, #00d9ff, #ffffff, #00d9ff, #ffffff);
+  --color-glow-foreground: rgba(255, 255, 255, 0.25);
+  --color-glow-accent: rgba(0, 217, 255, 0.2);
+  --color-glow-tertiary: rgba(124, 58, 237, 0.2);
+  --color-hover-surface: rgba(255, 255, 255, 0.1);
+  --color-hover-border-accent: rgba(0, 217, 255, 0.5);
+  --color-hover-border-foreground: rgba(255, 255, 255, 0.2);
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 60px rgba(0, 217, 255, 0.1);
+  --shadow-glow-accent: 0 0 20px rgba(0, 217, 255, 0.2), 0 0 60px rgba(0, 217, 255, 0.05);
+  --blob-foreground: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
+  --blob-accent: radial-gradient(circle, rgba(0, 217, 255, 0.25) 0%, transparent 70%);
+  --blob-foreground-soft: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  --blob-accent-soft: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
+  --blob-deep: radial-gradient(circle, rgba(26, 26, 46, 0.6) 0%, transparent 70%);
+}

@@ -55,8 +55,8 @@ export default function Hero() {
 
                         <div className="flex flex-col gap-4 items-center lg:items-start text-center lg:text-left w-full">
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] mb-2 tracking-tight">
-                                <span className="text-cyan block">Transform Your</span>
-                                <span className="text-white block">Business with AI</span>
+                                <span className="text-accent block">Transform Your</span>
+                                <span className="text-foreground block">Business with AI</span>
                                 <span className="gradient-text-animated block">&amp; Web Solutions.</span>
                             </h1>
                             <div className="h-10 md:h-12 overflow-hidden mt-2">
@@ -66,7 +66,7 @@ export default function Hero() {
                                     animate={{ y: 0, opacity: 1 }}
                                     exit={{ y: -20, opacity: 0 }}
                                     style={{ fontFamily: 'var(--font-space)' }}
-                                    className="text-xl md:text-3xl text-cyan font-bold tracking-wide"
+                                    className="text-xl md:text-3xl text-accent font-bold tracking-wide"
                                 >
                                     {role}
                                 </motion.p>
@@ -81,12 +81,12 @@ export default function Hero() {
 
                         <div className="flex flex-wrap gap-4 md:gap-6 mt-6 justify-center lg:justify-start items-center">
                             <MagneticButton>
-                                <Link href="/contact" className="inline-flex items-center justify-center h-14 px-10 bg-gradient-accent text-base font-bold rounded-lg shadow-glow hover:scale-105 transition-transform duration-300">
+                                <Link href="/contact" className="inline-flex items-center justify-center h-14 px-10 bg-gradient-btn text-btn-primary-foreground text-base font-bold rounded-lg shadow-glow hover:scale-105 transition-transform duration-300">
                                     Get a Free Quote
                                 </Link>
                             </MagneticButton>
                             <MagneticButton>
-                                <button className="inline-flex items-center justify-center h-14 px-10 border border-violet text-text-primary font-bold rounded-lg hover:bg-violet/10 transition-colors duration-300">
+                                <button className="inline-flex items-center justify-center h-14 px-10 border border-foreground text-foreground font-bold rounded-lg hover:bg-foreground/10 transition-colors duration-300">
                                     Our Services
                                 </button>
                             </MagneticButton>

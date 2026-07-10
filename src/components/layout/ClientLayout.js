@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import ScrollProgressBar from "@/components/common/ScrollProgressBar";
 import NoiseOverlay from "@/components/common/NoiseOverlay";
 import AIAssistantBot from "@/components/chat/AIAssistantBot";
+import { theme } from "@/lib/theme";
 
 import Particles from "@/components/three/Particles";
 const DynamicParticles = dynamic(() => Promise.resolve(Particles), { ssr: false });
@@ -16,11 +17,11 @@ export default function ClientLayout({ children }) {
     return (
         <>
             {/* GLOBAL BACKGROUND LAYER */}
-            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#080808]">
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-canvas">
                 {/* CSS Gradient Mesh */}
                 <div className="absolute inset-0">
-                    <div className="gradient-mesh-blob gradient-mesh-blob--violet opacity-20" />
-                    <div className="gradient-mesh-blob gradient-mesh-blob--cyan opacity-20" />
+                    <div className="gradient-mesh-blob gradient-mesh-blob--foreground opacity-20" />
+                    <div className="gradient-mesh-blob gradient-mesh-blob--accent opacity-20" />
                     <div className="gradient-mesh-blob gradient-mesh-blob--deep" />
                 </div>
 
@@ -28,7 +29,7 @@ export default function ClientLayout({ children }) {
                 {mounted && (
                     <div className="absolute inset-0 w-full h-full opacity-60">
                         <DynamicParticles
-                            particleColors={["#ffffff", "#6C63FF", "#00F2FF"]}
+                            particleColors={theme.particles.colors}
                             particleCount={500}
                             particleSpread={10}
                             speed={0.1}
