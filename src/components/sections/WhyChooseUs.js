@@ -83,9 +83,6 @@ export default function WhyChooseUs() {
                 {/* Section Header */}
                 <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
                     <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-accent font-mono text-sm tracking-widest uppercase">
-                            WHY CHOOSE US
-                        </span>
                     </FadeIn>
                     <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
                         Why Businesses Trust{" "}
