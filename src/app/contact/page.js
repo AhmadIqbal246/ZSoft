@@ -25,9 +25,9 @@ const contactDetails = [
     {
         icon: <Mail className="text-accent" size={24} />,
         label: "Email Us",
-        value: "ahmad@protonixshub.com",
+        value: "ahmad@protonixs.com",
         description: "Our team typically responds within 2 hours.",
-        href: "mailto:ahmad@protonixshub.com"
+        href: "mailto:ahmad@protonixs.com"
     },
     {
         icon: <Phone className="text-accent" size={24} />,

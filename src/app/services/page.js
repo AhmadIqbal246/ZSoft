@@ -323,8 +323,8 @@ export default function ServicesPage() {
                                         <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                                     </Link>
                                 </MagneticButton>
-                                <a href="mailto:ahmad@protonixshub.com" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
-                                    ahmad@protonixshub.com
+                                <a href="mailto:ahmad@protonixs.com" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
+                                    ahmad@protonixs.com
                                 </a>
                             </div>
                         </div>

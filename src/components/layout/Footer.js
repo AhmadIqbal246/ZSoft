@@ -96,9 +96,9 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs">Get in Touch</h4>
                         <div className="flex flex-col gap-4 text-muted text-sm">
-                            <a href="mailto:ahmad@protonixshub.com" className="flex items-center gap-3 hover:text-accent transition-colors">
+                            <a href="mailto:ahmad@protonixs.com" className="flex items-center gap-3 hover:text-accent transition-colors">
                                 <Mail size={16} className="text-accent" />
-                                ahmad@protonixshub.com
+                                ahmad@protonixs.com
                             </a>
                             <div className="flex items-center gap-3">
                                 <Phone size={16} className="text-accent" />
