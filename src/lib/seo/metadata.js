@@ -33,7 +33,7 @@ export function buildMetadata({ title, description, path = "", keywords = [], no
 
 export const pageMetadata = {
     home: buildMetadata({
-        title: "Protonixs | AI & Web Development Agency, Lahore",
+        title: "Protonixs | AI & Web Development Agency",
         description: "AI chatbots, RAG systems & custom web development. Protonixs builds production-grade software for growing businesses. Get a free quote.",
         path: "/",
     }),
