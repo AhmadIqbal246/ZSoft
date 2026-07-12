@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
 import MagneticButton from "@/components/animations/MagneticButton";
+import { trackContactFormSubmit } from "@/lib/analytics/gtag";
 
 export default function Contact() {
     const [formStatus, setFormStatus] = useState("idle");
@@ -12,6 +13,7 @@ export default function Contact() {
         setFormStatus("loading");
         setTimeout(() => {
             setFormStatus("success");
+            trackContactFormSubmit("home_contact");
         }, 2000);
     };
     return (

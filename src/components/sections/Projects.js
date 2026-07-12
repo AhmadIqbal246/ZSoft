@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, Globe } from "lucide-react";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { getProjectImageAlt } from "@/lib/seo/image-alt";
 
 const navLinks = [
     { name: "Frontend", href: "#frontend" },
@@ -52,7 +53,7 @@ function ProjectCard({ project, index }) {
             {/* Background Image */}
             <motion.img
                 src={project.image}
-                alt={project.title}
+                alt={getProjectImageAlt(project.slug)}
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-contain p-2 md:p-6 transition-all duration-700 group-hover:scale-105"
             />

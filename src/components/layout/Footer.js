@@ -74,9 +74,9 @@ export default function Footer() {
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs">Services</h4>
                         <div className="flex flex-col gap-4 text-muted text-sm">
                             <Link href="/services" className="hover:text-accent transition-colors">AI & RAG Systems</Link>
-                            <Link href="#skills" className="hover:text-accent transition-colors">Web Development</Link>
-                            <Link href="#skills" className="hover:text-accent transition-colors">SaaS Solutions</Link>
-                            <Link href="#skills" className="hover:text-accent transition-colors">Cloud Architecture</Link>
+                            <Link href="/services" className="hover:text-accent transition-colors">Web Development</Link>
+                            <Link href="/services" className="hover:text-accent transition-colors">SaaS Solutions</Link>
+                            <Link href="/services" className="hover:text-accent transition-colors">Cloud Architecture</Link>
                         </div>
                     </div>
 
@@ -86,9 +86,10 @@ export default function Footer() {
                         <div className="flex flex-col gap-4 text-muted text-sm">
                             <Link href="/about" className="hover:text-accent transition-colors">About Us</Link>
                             <Link href="/team" className="hover:text-accent transition-colors">Our Team</Link>
-                            <Link href="#projects" className="hover:text-accent transition-colors">Our Work</Link>
-                            <Link href="#faq" className="hover:text-accent transition-colors">FAQs</Link>
-                            <Link href="#contact" className="hover:text-accent transition-colors">Contact</Link>
+                            <Link href="/projects" className="hover:text-accent transition-colors">Our Work</Link>
+                            <Link href="/faq" className="hover:text-accent transition-colors">FAQs</Link>
+                            <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
+                            <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>
                         </div>
                     </div>
 

@@ -20,6 +20,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/animations/MagneticButton";
+import { trackContactFormSubmit } from "@/lib/analytics/gtag";
 
 const contactDetails = [
     {
@@ -77,6 +78,7 @@ export default function ContactPage() {
         await new Promise(r => setTimeout(r, 2000));
         setIsSubmitting(false);
         setIsSuccess(true);
+        trackContactFormSubmit("contact_page");
         setFormState({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setIsSuccess(false), 5000);
     };

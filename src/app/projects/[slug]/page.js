@@ -14,17 +14,19 @@ import {
     Globe
 } from "lucide-react";
 import { projects } from "@/data/content";
+import { caseStudyNarratives } from "@/data/case-studies";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/animations/MagneticButton";
+import PageBreadcrumbs from "@/components/seo/PageBreadcrumbs";
+import { getProjectImageAlt } from "@/lib/seo/image-alt";
 
 export default function ProjectDetailPage() {
     const { slug } = useParams();
     const router = useRouter();
 
     const project = projects.find((p) => p.slug === slug);
-
     if (!project) {
         return (
             <main className="min-h-screen bg-canvas flex flex-col items-center justify-center text-center p-6">
@@ -32,15 +34,16 @@ export default function ProjectDetailPage() {
                 <p className="text-muted mb-8">The project you are looking for does not exist.</p>
                 <MagneticButton>
                     <button
-                        onClick={() => router.push("/")}
-                        className="py-4 px-8 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl flex items-center gap-2"
+                        onClick={() => router.push("/projects")}
+                        className="py-4 px-8 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl flex items-center gap-2 cursor-pointer"
                     >
-                        <ArrowLeft size={20} /> Back to Home
+                        <ArrowLeft size={20} /> Back to Projects
                     </button>
                 </MagneticButton>
             </main>
         );
     }
+    const narrative = caseStudyNarratives[project.slug];
 
     return (
         <main className="bg-transparent scroll-smooth">
@@ -52,10 +55,14 @@ export default function ProjectDetailPage() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full glow-radial-top pointer-events-none" />
 
                 <div className="container mx-auto px-6 lg:px-12">
+                    <PageBreadcrumbs items={[
+                        { name: "Projects", path: "/projects" },
+                        { name: project.title, path: `/projects/${project.slug}` },
+                    ]} />
                     <FadeIn direction="up">
                         <button
-                            onClick={() => router.back()}
-                            className="flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 font-mono text-sm tracking-widest uppercase"
+                            onClick={() => router.push("/projects")}
+                            className="flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8 font-mono text-sm tracking-widest uppercase cursor-pointer"
                         >
                             <ArrowLeft size={16} /> Back to Projects
                         </button>
@@ -105,7 +112,8 @@ export default function ProjectDetailPage() {
                                 <div className="relative aspect-[4/3] rounded-3xl md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-black/40">
                                     <img
                                         src={project.image}
-                                        alt={project.title}
+                                        alt={getProjectImageAlt(project.slug)}
+                                        loading="lazy"
                                         className="w-full h-full object-contain p-2 md:p-8 transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
@@ -137,7 +145,8 @@ export default function ProjectDetailPage() {
                                 >
                                     <img
                                         src={img}
-                                        alt={`${project.title} screen ${i + 1}`}
+                                        alt={getProjectImageAlt(project.slug, i)}
+                                        loading="lazy"
                                         className="w-full h-auto object-contain p-1 md:p-6 transition-all duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -147,6 +156,36 @@ export default function ProjectDetailPage() {
                     </div>
                 </div>
             </section>
+
+            {narrative && (
+                <section className="py-20 border-b border-white/5">
+                    <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
+                        <FadeIn direction="up">
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-10">
+                                The <span className="text-accent">Challenge</span> & Solution
+                            </h2>
+                            <div className="flex flex-col gap-8 text-muted leading-relaxed">
+                                <div>
+                                    <h3 className="text-accent font-mono text-xs uppercase tracking-widest mb-3">Problem</h3>
+                                    <p>{narrative.problem}</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-accent font-mono text-xs uppercase tracking-widest mb-3">Solution</h3>
+                                    <p>{narrative.solution}</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-accent font-mono text-xs uppercase tracking-widest mb-3">Results</h3>
+                                    <p>{narrative.results}</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-accent font-mono text-xs uppercase tracking-widest mb-3">Tech Stack</h3>
+                                    <p>{narrative.stack}</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </section>
+            )}
 
             {/* FEATURES SECTION */}
             <section className="py-32 bg-surface/30">

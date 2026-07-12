@@ -14,8 +14,8 @@ export default function Navbar() {
         { name: "About", href: "/about" },
         { name: "Our Team", href: "/team" },
         { name: "Services", href: "/services" },
-        { name: "Our Work", href: "/#projects" },
-        { name: "FAQ", href: "/#faq" },
+        { name: "Our Work", href: "/projects" },
+        { name: "FAQ", href: "/faq" },
     ];
 
     // Set portal target after mount

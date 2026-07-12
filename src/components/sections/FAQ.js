@@ -4,41 +4,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import FadeIn from "@/components/animations/FadeIn";
-
-const faqs = [
-    {
-        question: "What services does Protonixs offer?",
-        answer: "Protonixs is a comprehensive IT services company specializing in web development, AI chatbots, RAG systems, and custom software solutions. We build Python and JavaScript applications, create intelligent AI systems, and provide 24/7 support and maintenance.",
-    },
-    {
-        question: "How much do your services cost?",
-        answer: "Our pricing varies based on project scope and requirements. We offer competitive rates for web development, AI solutions, and ongoing support. Contact us for a free quote tailored to your specific needs and budget.",
-    },
-    {
-        question: "What technologies do you specialize in?",
-        answer: "We specialize in Python and JavaScript development, including frameworks like React, Node.js, Django, and Flask. We also excel in AI technologies, building chatbots, RAG systems, and machine learning solutions for businesses.",
-    },
-    {
-        question: "How secure are your solutions?",
-        answer: "Security is our top priority. We implement enterprise-grade security measures including end-to-end encryption, secure authentication, and compliance with industry standards. All our solutions are built with security best practices from the ground up.",
-    },
-    {
-        question: "Can you integrate with our existing systems?",
-        answer: "Absolutely! We specialize in creating custom integrations with existing business systems, databases, and third-party APIs. Our solutions are designed to work seamlessly with your current infrastructure and workflows.",
-    },
-    {
-        question: "What kind of support do you provide?",
-        answer: "We offer 24/7 technical support through multiple channels including phone, email, and live chat. Our support team includes experienced developers and system administrators who understand your technical infrastructure.",
-    },
-    {
-        question: "How long does a typical project take?",
-        answer: "Project timelines vary based on complexity and scope. Simple web applications typically take 4-8 weeks, while complex AI systems may take 3-6 months. We provide detailed timelines during the initial consultation and keep you updated throughout development.",
-    },
-    {
-        question: "Do you provide ongoing maintenance?",
-        answer: "Yes! We offer comprehensive maintenance packages including regular updates, security patches, performance monitoring, and technical support. We ensure your systems remain secure, up-to-date, and running optimally.",
-    },
-];
+import JsonLd from "@/components/seo/JsonLd";
+import { faqPageSchema } from "@/lib/seo/schemas";
+import { faqs } from "@/data/faqs";
 
 function FAQItem({ faq, index, isOpen, onToggle }) {
     return (
@@ -55,6 +23,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
                 <button
                     onClick={onToggle}
                     className="w-full flex items-center justify-between p-6 md:p-7 text-left gap-4 cursor-pointer"
+                    aria-expanded={isOpen}
                 >
                     <span className={`text-base md:text-lg font-bold transition-colors duration-300 ${isOpen ? "text-white" : "text-white/80"}`}>
                         {faq.question}
@@ -67,7 +36,6 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
                         <ChevronDown size={20} />
                     </motion.div>
                 </button>
-
                 <AnimatePresence initial={false}>
                     {isOpen && (
                         <motion.div
@@ -91,38 +59,37 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
     );
 }
 
-export default function FAQ() {
+export default function FAQ({ hideHeader = false }) {
     const [openIndex, setOpenIndex] = useState(0);
-
     const handleToggle = (index) => {
         setOpenIndex(openIndex === index ? -1 : index);
     };
-
     return (
         <section id="faq" className="py-10 lg:py-32 bg-transparent overflow-hidden relative">
-            {/* Background glows */}
+            <JsonLd data={faqPageSchema(faqs)} />
             <div className="absolute top-[20%] right-[-15%] w-[500px] h-[500px] bg-foreground/5 blur-[150px] rounded-full pointer-events-none" />
             <div className="absolute bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
-
             <div className="container mx-auto px-6 lg:px-12">
-                {/* Section Header */}
-                <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
-                    <FadeIn direction="down" delay={0.2} distance={20}>
-                        <span className="text-accent font-mono text-sm tracking-widest uppercase">
-                            FAQ
-                        </span>
-                    </FadeIn>
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight">
-                        Got questions?<br />
-                        <span className="gradient-text-animated">We've got answers</span>.
-                    </h2>
-                </div>
-
-                {/* FAQ Accordion */}
+                {!hideHeader && (
+                    <div className="flex flex-col gap-6 mb-20 items-center justify-center text-center">
+                        <FadeIn direction="down" delay={0.2} distance={20}>
+                            <span className="text-accent font-mono text-sm tracking-widest uppercase">
+                                FAQ
+                            </span>
+                        </FadeIn>
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight">
+                            Got questions?<br />
+                            <span className="gradient-text-animated">We&apos;ve got answers</span>.
+                        </h2>
+                        <p className="text-muted text-lg max-w-2xl">
+                            Learn about Protonixs AI chatbot development, custom RAG systems, and web development services in Lahore.
+                        </p>
+                    </div>
+                )}
                 <div className="max-w-3xl mx-auto flex flex-col gap-4">
                     {faqs.map((faq, index) => (
                         <FAQItem
-                            key={index}
+                            key={faq.question}
                             faq={faq}
                             index={index}
                             isOpen={openIndex === index}
