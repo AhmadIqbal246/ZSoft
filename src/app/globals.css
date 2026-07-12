@@ -173,8 +173,8 @@ code,
   width: 500px;
   height: 500px;
   background: var(--blob-foreground);
-  top: -10%;
-  left: -5%;
+  top: 20%;
+  left: 35%;
   animation: gradientMeshFloat1 18s ease-in-out infinite;
 }
 

@@ -2,8 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Instagram, Mail, ArrowRight, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import { Github, Linkedin, Facebook, Instagram, Mail, ArrowRight, MapPin, Phone } from "lucide-react";
 import MagneticButton from "@/components/animations/MagneticButton";
+
+const LOGO_SRC = "/navbar-logo.png";
 
 export default function Footer() {
     return (
@@ -35,18 +38,19 @@ export default function Footer() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
                     {/* Brand Column */}
-                    <div className="flex flex-col gap-6">
-                        <Link href="/">
-                            <div className="flex items-center gap-3 group">
-                                <div className="w-12 h-12 rounded-xl bg-gradient-accent flex items-center justify-center font-bold text-xl shadow-glow transition-transform duration-500 group-hover:rotate-12">
-                                    N
-                                </div>
-                                <span className="font-serif text-3xl font-bold tracking-tight text-white group-hover:text-accent transition-colors">
-                                    Protonixs
-                                </span>
+                    <div className="flex flex-col gap-4 -mt-2">
+                        <Link href="/" className="cursor-pointer block -mt-6 md:-mt-10">
+                            <div className="group">
+                                <Image
+                                    src={LOGO_SRC}
+                                    alt="Protonixs"
+                                    width={520}
+                                    height={144}
+                                    className="h-28 md:h-36 lg:h-40 w-auto object-contain mix-blend-screen transition-transform duration-300 group-hover:scale-105"
+                                />
                             </div>
                         </Link>
-                        <p className="text-muted text-sm leading-relaxed">
+                        <p className="text-muted text-sm leading-relaxed -mt-6 md:-mt-8">
                             Engineering digital ecosystems that transform businesses through AI, Web Development, and Custom Software Excellence.
                         </p>
                         <div className="flex gap-4">
@@ -55,6 +59,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"
+                                aria-label="GitHub"
                             >
                                 <Github size={18} />
                             </a>
@@ -63,8 +68,27 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"
+                                aria-label="LinkedIn"
                             >
                                 <Linkedin size={18} />
+                            </a>
+                            <a
+                                href="https://www.facebook.com/share/1AVCKR2WJd/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"
+                                aria-label="Facebook"
+                            >
+                                <Facebook size={18} />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/protonixs?igsh=emVjbGdnOGN0aXM0"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"
+                                aria-label="Instagram"
+                            >
+                                <Instagram size={18} />
                             </a>
                         </div>
                     </div>

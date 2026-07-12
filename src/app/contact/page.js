@@ -14,7 +14,8 @@ import {
     ArrowRight,
     Github,
     Linkedin,
-    Twitter
+    Facebook,
+    Instagram
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -43,6 +44,13 @@ const contactDetails = [
         value: "DHA Phase 8, Lahore",
         href: "https://maps.google.com"
     }
+];
+
+const socialLinks = [
+    { icon: <Github size={20} />, href: "https://github.com/AhmadIqbal246", label: "GitHub" },
+    { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/m-ahmad-iqbal", label: "LinkedIn" },
+    { icon: <Facebook size={20} />, href: "https://www.facebook.com/share/1AVCKR2WJd/", label: "Facebook" },
+    { icon: <Instagram size={20} />, href: "https://www.instagram.com/protonixs?igsh=emVjbGdnOGN0aXM0", label: "Instagram" },
 ];
 
 const faqItems = [
@@ -139,13 +147,15 @@ export default function ContactPage() {
                                     <div className="pt-10 border-t border-white/5">
                                         <h4 className="text-muted text-xs font-mono uppercase tracking-widest mb-6 block">Follow Our Journey</h4>
                                         <div className="flex gap-4">
-                                            {[
-                                                { icon: <Github size={20} />, href: "#" },
-                                                { icon: <Linkedin size={20} />, href: "#" },
-                                                { icon: <Twitter size={20} />, href: "#" }
-                                            ].map((social, i) => (
+                                            {socialLinks.map((social, i) => (
                                                 <MagneticButton key={i}>
-                                                    <a href={social.href} className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:text-accent hover:border-accent/50 transition-all">
+                                                    <a
+                                                        href={social.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        aria-label={social.label}
+                                                        className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:text-accent hover:border-accent/50 transition-all cursor-pointer"
+                                                    >
                                                         {social.icon}
                                                     </a>
                                                 </MagneticButton>
