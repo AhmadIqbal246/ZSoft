@@ -22,6 +22,7 @@ import Footer from "@/components/layout/Footer";
 import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/animations/MagneticButton";
 import { trackContactFormSubmit } from "@/lib/analytics/gtag";
+import { submitContact } from "@/lib/actions/submitContact";
 
 const contactDetails = [
     {
@@ -48,7 +49,7 @@ const contactDetails = [
 
 const socialLinks = [
     { icon: <Github size={20} />, href: "https://github.com/AhmadIqbal246", label: "GitHub" },
-    { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/m-ahmad-iqbal", label: "LinkedIn" },
+    { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/company/protonixs", label: "LinkedIn" },
     { icon: <Facebook size={20} />, href: "https://www.facebook.com/share/1AVCKR2WJd/", label: "Facebook" },
     { icon: <Instagram size={20} />, href: "https://www.instagram.com/protonixs?igsh=emVjbGdnOGN0aXM0", label: "Instagram" },
 ];
@@ -78,17 +79,33 @@ export default function ContactPage() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState("");
+    const [honeypot, setHoneypot] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(r => setTimeout(r, 2000));
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        trackContactFormSubmit("contact_page");
-        setFormState({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setIsSuccess(false), 5000);
+        setError("");
+        setIsSuccess(false);
+        try {
+            await submitContact({
+                ...formState,
+                website: honeypot,
+                source: "contact_page",
+            });
+            setIsSuccess(true);
+            trackContactFormSubmit("contact_page");
+            setFormState({ name: "", email: "", subject: "", message: "" });
+            setHoneypot("");
+            setTimeout(() => setIsSuccess(false), 5000);
+        } catch (err) {
+            const message =
+                err?.response?.data?.error ||
+                "Failed to send message. Please try again or email ahmad@protonixs.com.";
+            setError(message);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -180,6 +197,21 @@ export default function ContactPage() {
                                         </div>
 
                                         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                                            <div
+                                                className="absolute -left-[9999px] opacity-0 h-0 w-0 overflow-hidden"
+                                                aria-hidden="true"
+                                            >
+                                                <label htmlFor="contact-website">Website</label>
+                                                <input
+                                                    id="contact-website"
+                                                    name="website_url_confirm"
+                                                    type="text"
+                                                    tabIndex={-1}
+                                                    autoComplete="off"
+                                                    value={honeypot}
+                                                    onChange={(e) => setHoneypot(e.target.value)}
+                                                />
+                                            </div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="flex flex-col gap-2">
                                                     <label className="text-[10px] font-mono text-muted uppercase tracking-widest ml-4">Full Name</label>
@@ -204,7 +236,6 @@ export default function ContactPage() {
                                                     />
                                                 </div>
                                             </div>
-
                                             <div className="flex flex-col gap-2">
                                                 <label className="text-[10px] font-mono text-muted uppercase tracking-widest ml-4">Subject</label>
                                                 <input
@@ -216,7 +247,6 @@ export default function ContactPage() {
                                                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                                                 />
                                             </div>
-
                                             <div className="flex flex-col gap-2">
                                                 <label className="text-[10px] font-mono text-muted uppercase tracking-widest ml-4">Message</label>
                                                 <textarea
@@ -228,12 +258,14 @@ export default function ContactPage() {
                                                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                                                 ></textarea>
                                             </div>
-
+                                            {error ? (
+                                                <p className="text-red-400 text-sm" role="alert">{error}</p>
+                                            ) : null}
                                             <MagneticButton>
                                                 <button
                                                     type="submit"
                                                     disabled={isSubmitting}
-                                                    className="w-full sm:w-auto mt-4 py-5 px-10 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow flex items-center justify-center gap-4 group transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                    className="w-full sm:w-auto mt-4 py-5 px-10 bg-gradient-btn text-btn-primary-foreground font-bold rounded-2xl shadow-glow flex items-center justify-center gap-4 group transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                                                 >
                                                     {isSubmitting ? (
                                                         <>Processing... <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1 }} className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full" /></>

@@ -18,7 +18,7 @@ export const siteConfig = {
     },
     sameAs: [
         "https://github.com/AhmadIqbal246",
-        "https://www.linkedin.com/in/m-ahmad-iqbal",
+        "https://www.linkedin.com/company/protonixs",
         "https://www.facebook.com/share/1AVCKR2WJd/",
         "https://www.instagram.com/protonixs",
     ],

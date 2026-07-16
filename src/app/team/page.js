@@ -300,7 +300,7 @@ export default function TeamPage() {
                                         <ExternalLink size={24} className="group-hover:rotate-12 transition-transform" />
                                     </a>
                                 </MagneticButton>
-                                <a href="https://www.linkedin.com/company/Protonixs" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
+                                <a href="https://www.linkedin.com/company/protonixs" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors font-mono tracking-widest uppercase text-sm">
                                     Follow us on LinkedIn
                                 </a>
                             </div>

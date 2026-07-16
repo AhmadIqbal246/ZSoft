@@ -64,7 +64,7 @@ export default function Footer() {
                                 <Github size={18} />
                             </a>
                             <a
-                                href="https://www.linkedin.com/in/m-ahmad-iqbal"
+                                href="https://www.linkedin.com/company/protonixs"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 flex items-center justify-center rounded-full bg-surface border border-white/5 text-muted hover:text-accent hover:border-accent/30 transition-all shadow-lg"

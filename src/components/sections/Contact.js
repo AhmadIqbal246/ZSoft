@@ -5,17 +5,43 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
 import MagneticButton from "@/components/animations/MagneticButton";
 import { trackContactFormSubmit } from "@/lib/analytics/gtag";
+import { submitContact } from "@/lib/actions/submitContact";
 
 export default function Contact() {
     const [formStatus, setFormStatus] = useState("idle");
-    const handleSubmit = (e) => {
+    const [error, setError] = useState("");
+    const [formState, setFormState] = useState({
+        name: "",
+        email: "",
+        message: "",
+        website: "",
+    });
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setFormStatus("loading");
-        setTimeout(() => {
+        setError("");
+        try {
+            await submitContact({
+                name: formState.name,
+                email: formState.email,
+                subject: "Website Inquiry",
+                message: formState.message,
+                website: formState.website,
+                source: "home_contact",
+            });
             setFormStatus("success");
             trackContactFormSubmit("home_contact");
-        }, 2000);
+            setFormState({ name: "", email: "", message: "", website: "" });
+        } catch (err) {
+            const message =
+                err?.response?.data?.error ||
+                "Failed to send message. Please try again or email ahmad@protonixs.com.";
+            setError(message);
+            setFormStatus("idle");
+        }
     };
+
     return (
         <section id="contact" className="py-10 lg:py-32 bg-transparent overflow-hidden relative">
             <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-foreground/10 blur-[150px] -z-1" />
@@ -54,6 +80,21 @@ export default function Contact() {
                                     onSubmit={handleSubmit}
                                     className="flex flex-col gap-8 w-full text-left"
                                 >
+                                    <div
+                                        className="absolute -left-[9999px] opacity-0 h-0 w-0 overflow-hidden"
+                                        aria-hidden="true"
+                                    >
+                                        <label htmlFor="home-website">Website</label>
+                                        <input
+                                            id="home-website"
+                                            name="website_url_confirm"
+                                            type="text"
+                                            tabIndex={-1}
+                                            autoComplete="off"
+                                            value={formState.website}
+                                            onChange={(e) => setFormState({ ...formState, website: e.target.value })}
+                                        />
+                                    </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="flex flex-col gap-2 relative">
                                             <label className="text-xs font-mono text-muted uppercase tracking-wider mb-2">Full Name</label>
@@ -62,6 +103,8 @@ export default function Contact() {
                                                 type="text"
                                                 placeholder="John Doe"
                                                 className="p-6 rounded-2xl bg-surface border border-white/5 text-foreground focus:border-foreground focus:ring-1 focus:ring-accent transition-all outline-none"
+                                                value={formState.name}
+                                                onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                                             />
                                         </div>
                                         <div className="flex flex-col gap-2">
@@ -71,6 +114,8 @@ export default function Contact() {
                                                 type="email"
                                                 placeholder="john@example.com"
                                                 className="p-6 rounded-2xl bg-surface border border-white/5 text-foreground focus:border-accent focus:ring-1 focus:ring-accent transition-all outline-none"
+                                                value={formState.email}
+                                                onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                                             />
                                         </div>
                                     </div>
@@ -81,8 +126,13 @@ export default function Contact() {
                                             rows="6"
                                             placeholder="Tell us about your project..."
                                             className="p-10 rounded-3xl bg-surface border border-white/5 text-foreground focus:border-foreground focus:ring-1 focus:ring-accent transition-all outline-none resize-none"
+                                            value={formState.message}
+                                            onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                                         />
                                     </div>
+                                    {error ? (
+                                        <p className="text-red-400 text-sm" role="alert">{error}</p>
+                                    ) : null}
                                     <MagneticButton>
                                         <button
                                             type="submit"
